@@ -49,4 +49,9 @@ public class LoginActionTest {
 
         verify(mockEmployeeService, times(1)).hasAuthentication(any(Employee.class));
 	}
+
+    @Test
+    public void shouldRedirectToLoginPageWhenInitApp() throws Exception {
+        assertThat(loginAction.init(), is(equalTo("input")));
+    }
 }
