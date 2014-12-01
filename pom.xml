@@ -11,6 +11,7 @@
     <properties>
         <struts2.version>2.3.16.3</struts2.version>
         <junit.version>4.11</junit.version>
+        <mockito.version>1.9.5</mockito.version>
         <compile.version>1.7</compile.version>
         <plugin.compiler.version>3.1</plugin.compiler.version>
         <plugin.war.version>2.4</plugin.war.version>
@@ -46,6 +47,12 @@
             <groupId>org.apache.struts</groupId>
             <artifactId>struts2-junit-plugin</artifactId>
             <version>${struts2.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-all</artifactId>
+            <version>${mockito.version}</version>
             <scope>test</scope>
         </dependency>
 
