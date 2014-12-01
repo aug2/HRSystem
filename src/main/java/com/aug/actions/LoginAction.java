@@ -17,6 +17,8 @@ public class LoginAction {
     }
 
     public String execute() {
-        return null;
+        if(employeeBo.isLogin(employee))
+            return "welcome";
+        return "input";
     }
 }

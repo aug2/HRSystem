@@ -16,16 +16,14 @@ import static org.mockito.Mockito.when;
 
 @RunWith(MockitoJUnitRunner.class)
 public class LoginActionTest {
-	LoginAction loginAction = new LoginAction();
+	private LoginAction loginAction;
 
 	@Mock
     EmployeeService mockEmployeeService;
 
-	@Mock
-	EmployeeService mockEmployee;
-
 	@Before
 	public void setUp() {
+        loginAction = new LoginAction();
 		loginAction.setEmployeeBo(mockEmployeeService);
 	}
 
@@ -34,8 +32,10 @@ public class LoginActionTest {
 		Employee employee = new Employee();
 		employee.setEmail("test@test.com");
 		loginAction.setEmployee(employee);
+
 		when(mockEmployeeService.isLogin(any(Employee.class))).thenReturn(true);
-		assertThat(loginAction.execute(), is(equalTo("welcome")));
+
+        assertThat(loginAction.execute(), is(equalTo("welcome")));
 	}
 
 	@Test
