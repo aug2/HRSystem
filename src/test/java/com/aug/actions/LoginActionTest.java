@@ -24,7 +24,7 @@ public class LoginActionTest {
 	@Before
 	public void setUp() {
         loginAction = new LoginAction();
-		loginAction.setEmployeeBo(mockEmployeeService);
+		loginAction.setEmployeeService(mockEmployeeService);
 	}
 
 	@Test

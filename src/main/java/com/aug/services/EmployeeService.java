@@ -1,10 +1,24 @@
 package com.aug.services;
 
+import com.aug.daos.EmployeeDao;
 import com.aug.entities.Employee;
+
+import java.util.List;
 
 public class EmployeeService {
 
+    private EmployeeDao employeeDao;
+
     public boolean isLogin(Employee employee) {
-        return false;
+        List<Employee> employees = employeeDao.findUserByEmailPassword(employee);
+        return (employees.size() > 0) ? true : false;
+    }
+
+    public void setEmployeeDao(EmployeeDao employeeDao) {
+        this.employeeDao = employeeDao;
+    }
+
+    public EmployeeDao getEmployeeDao() {
+        return employeeDao;
     }
 }

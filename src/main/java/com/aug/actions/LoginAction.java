@@ -5,11 +5,11 @@ import com.aug.services.EmployeeService;
 
 public class LoginAction {
 
-    private EmployeeService employeeBo;
+    private EmployeeService employeeService;
     private Employee employee;
 
-    public void setEmployeeBo(EmployeeService employeeBo) {
-        this.employeeBo = employeeBo;
+    public void setEmployeeService(EmployeeService employeeBo) {
+        this.employeeService = employeeBo;
     }
 
     public void setEmployee(Employee employee) {
@@ -17,7 +17,7 @@ public class LoginAction {
     }
 
     public String execute() {
-        if(employeeBo.isLogin(employee))
+        if(employeeService.isLogin(employee))
             return "welcome";
         return "input";
     }
