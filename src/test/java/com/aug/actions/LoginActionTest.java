@@ -8,6 +8,8 @@ import static org.mockito.Mockito.when;
 
 import java.util.HashMap;
 
+import com.aug.entities.Employee;
+import com.aug.services.EmployeeService;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -22,7 +24,7 @@ public class LoginActionTest {
 	LoginAction loginAction = new LoginAction();
 
 	@Mock
-	EmployeeService mockEmployeeService;
+    EmployeeService mockEmployeeService;
 
 	@Mock
 	EmployeeService mockEmployee;
@@ -30,13 +32,12 @@ public class LoginActionTest {
 	@Before
 	public void setUp() {
 		loginAction.setEmployeeBo(mockEmployeeService);
-		loginAction.setSession(new HashMap<String, Object>());
 	}
 
 	@Test
 	public void loginSuccessShouldRedirectToWelcomePage() throws Exception {
 		Employee employee = new Employee();
-		employee.setEmail("aaa");
+		employee.setEmail("test@test.com");
 		loginAction.setEmployee(employee);
 		when(mockEmployeeService.isLogin(any(Employee.class))).thenReturn(true);
 		assertThat(loginAction.execute(), is(equalTo("welcome")));
@@ -44,8 +45,7 @@ public class LoginActionTest {
 
 	@Test
 	public void loginFailureShouldNotRedirectPage() throws Exception {
-		when(mockEmployeeService.isLogin(any(Employee.class)))
-				.thenReturn(false);
+		when(mockEmployeeService.isLogin(any(Employee.class))).thenReturn(false);
 		assertThat(loginAction.execute(), is(equalTo("input")));
 	}
 }
