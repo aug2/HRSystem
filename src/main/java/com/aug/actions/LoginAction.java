@@ -2,9 +2,11 @@ package com.aug.actions;
 
 import com.aug.entities.Employee;
 import com.aug.services.EmployeeService;
+import org.springframework.beans.factory.annotation.Autowired;
 
 public class LoginAction {
 
+    @Autowired
     private EmployeeService employeeService;
     private Employee employee;
 
