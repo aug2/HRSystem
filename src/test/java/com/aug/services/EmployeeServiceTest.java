@@ -47,7 +47,7 @@ public class EmployeeServiceTest {
 	public void shouldBeTrueWhenUserLoginExistInDB() {
 		employees.add(employee);
 	    when(mockEmployeeDao.findUserByEmailPassword(any(Employee.class))).thenReturn(employees);
-		assertThat(employeeService.isLogin(employee), is(true));
+		assertThat(employeeService.hasAuthentication(employee), is(true));
 
         verify(mockEmployeeDao, times(1)).findUserByEmailPassword(any(Employee.class));
 	}
@@ -55,7 +55,7 @@ public class EmployeeServiceTest {
 	@Test
 	public void shouldBeFalseWhenUserLoginNotExistInDB() {
         when(mockEmployeeDao.findUserByEmailPassword(any(Employee.class))).thenReturn(employees);
-		assertThat(employeeService.isLogin(employee), is(false));
+		assertThat(employeeService.hasAuthentication(employee), is(false));
 
         verify(mockEmployeeDao, times(1)).findUserByEmailPassword(any(Employee.class));
 	}

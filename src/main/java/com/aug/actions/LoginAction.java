@@ -19,7 +19,7 @@ public class LoginAction {
     }
 
     public String execute() {
-        if(employeeService.isLogin(employee))
+        if(employeeService.hasAuthentication(employee))
             return "welcome";
         return "input";
     }

@@ -13,7 +13,7 @@ public class EmployeeService {
     @Autowired
     private EmployeeDao employeeDao;
 
-    public boolean isLogin(Employee employee) {
+    public boolean hasAuthentication(Employee employee) {
         List<Employee> employees = employeeDao.findUserByEmailPassword(employee);
         return (employees.size() > 0) ? true : false;
     }

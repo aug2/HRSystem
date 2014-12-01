@@ -36,17 +36,17 @@ public class LoginActionTest {
 		employee.setEmail("test@test.com");
 		loginAction.setEmployee(employee);
 
-		when(mockEmployeeService.isLogin(any(Employee.class))).thenReturn(true);
+		when(mockEmployeeService.hasAuthentication(any(Employee.class))).thenReturn(true);
         assertThat(loginAction.execute(), is(equalTo("welcome")));
 
-        verify(mockEmployeeService, times(1)).isLogin(any(Employee.class));
+        verify(mockEmployeeService, times(1)).hasAuthentication(any(Employee.class));
 	}
 
 	@Test
 	public void loginFailureShouldNotRedirectPage() throws Exception {
-		when(mockEmployeeService.isLogin(any(Employee.class))).thenReturn(false);
+		when(mockEmployeeService.hasAuthentication(any(Employee.class))).thenReturn(false);
 		assertThat(loginAction.execute(), is(equalTo("input")));
 
-        verify(mockEmployeeService, times(1)).isLogin(any(Employee.class));
+        verify(mockEmployeeService, times(1)).hasAuthentication(any(Employee.class));
 	}
 }
