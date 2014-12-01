@@ -7,6 +7,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
@@ -23,17 +24,19 @@ import static org.mockito.Mockito.when;
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = {"classpath:spring-test.xml"})
 public class EmployeeServiceTest {
-	Employee employee;
-    List<Employee> employees;
-	EmployeeService employeeService;
+
+    @Autowired
+    private EmployeeService employeeService;
 
     @Mock
-	EmployeeDao mockEmployeeDao;
+    private EmployeeDao mockEmployeeDao;
+
+	private Employee employee;
+    private List<Employee> employees;
 
 	@Before
 	public void setUp() {
         MockitoAnnotations.initMocks(this);
-        employeeService = new EmployeeService();
         employeeService.setEmployeeDao(mockEmployeeDao);
 
 		employee = new Employee();
@@ -41,7 +44,7 @@ public class EmployeeServiceTest {
 	}
 
 	@Test
-	public void shouldSuccessWhenUserLoginCorrectFormat() {
+	public void shouldBeTrueWhenUserLoginExistInDB() {
 		employees.add(employee);
 	    when(mockEmployeeDao.findUserByEmailPassword(any(Employee.class))).thenReturn(employees);
 		assertThat(employeeService.isLogin(employee), is(true));
@@ -50,7 +53,7 @@ public class EmployeeServiceTest {
 	}
 
 	@Test
-	public void shouldFailureWhenUserLoginIncorrectFormat() {
+	public void shouldBeFalseWhenUserLoginNotExistInDB() {
         when(mockEmployeeDao.findUserByEmailPassword(any(Employee.class))).thenReturn(employees);
 		assertThat(employeeService.isLogin(employee), is(false));
 

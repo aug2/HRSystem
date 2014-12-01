@@ -19,16 +19,15 @@
 	<context:component-scan base-package="com.aug.services" />
 	<context:component-scan base-package="com.aug.daos" />
 
-	<bean id="dataSource"
-		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+    <bean id="dataSource" class="org.apache.commons.dbcp2.BasicDataSource">
         <property name="username" value="sa"/>
         <property name="password" value="sa"/>
         <property name="url" value="jdbc:h2:mem:test"/>
         <property name="driverClassName" value="org.h2.Driver"/>
-	</bean>
+    </bean>
 
 	<bean id="sessionFactory"
-		class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">
+		class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
 		<property name="dataSource" ref="dataSource" />
         <property name="packagesToScan" value="com.aug.entities"/>
 		<property name="hibernateProperties">
@@ -42,7 +41,7 @@
 
 	<!-- Declare a transaction manager -->
 	<bean id="transactionManager"
-		class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+		class="org.springframework.orm.hibernate4.HibernateTransactionManager">
 		<property name="sessionFactory" ref="sessionFactory" />
 	</bean>
 

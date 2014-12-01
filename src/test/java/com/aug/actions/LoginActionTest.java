@@ -18,12 +18,13 @@ import static org.mockito.Mockito.when;
 
 @RunWith(MockitoJUnitRunner.class)
 public class LoginActionTest {
-	private LoginAction loginAction;
 
 	@Mock
-    EmployeeService mockEmployeeService;
+    private EmployeeService mockEmployeeService;
 
-	@Before
+    private LoginAction loginAction;
+
+    @Before
 	public void setUp() {
         loginAction = new LoginAction();
 		loginAction.setEmployeeService(mockEmployeeService);
