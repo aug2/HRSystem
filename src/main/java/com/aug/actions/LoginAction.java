@@ -15,12 +15,16 @@ public class LoginAction extends ActionSupport {
     private EmployeeService employeeService;
     private Employee employee;
 
-    public void setEmployeeService(EmployeeService employeeService) {
-        this.employeeService = employeeService;
+    public Employee getEmployee() {
+        return employee;
     }
 
     public void setEmployee(Employee employee) {
         this.employee = employee;
+    }
+
+    public void setEmployeeService(EmployeeService employeeService) {
+        this.employeeService = employeeService;
     }
 
     @Action(value = "login", results = {@Result(name = "input", location = "pages/login.jsp"), @Result(name = "welcome", location = "pages/welcome.jsp")})
