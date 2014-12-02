@@ -17,7 +17,7 @@
 	<div class="navbar navbar-fixed-top">
 		<div class="navbar-inner">
 			<div class="container">
-				<form class="form-signin" action="Login" method="post">
+				<form class="form-signin" action="login" method="post">
 					<div class="container">
 						<a class="brand" href="index.html"> <img src="img/aug_intranet_header1.png"></a>
 					</div>
