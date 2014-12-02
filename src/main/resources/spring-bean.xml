@@ -20,10 +20,10 @@
 	<context:component-scan base-package="com.aug.daos" />
 
     <bean id="dataSource" class="org.apache.commons.dbcp2.BasicDataSource">
-        <property name="username" value="sa"/>
-        <property name="password" value="sa"/>
-        <property name="url" value="jdbc:h2:mem:test"/>
-        <property name="driverClassName" value="org.h2.Driver"/>
+        <property name="username" value="aug"/>
+        <property name="password" value="aug@dm1n"/>
+        <property name="url" value="jdbc:mysql://localhost:3306/augdb"/>
+        <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
     </bean>
 
 	<bean id="sessionFactory"
@@ -32,8 +32,8 @@
         <property name="packagesToScan" value="com.aug.entities"/>
 		<property name="hibernateProperties">
 			<props>
-				<prop key="hibernate.dialect">org.hibernate.dialect.H2Dialect</prop>
-				<prop key="hibernate.hbm2ddl.auto">create-drop</prop>
+				<prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
+				<prop key="hibernate.hbm2ddl.auto">update</prop>
 				<prop key="hibernate.show_sql">true</prop>
 			</props>
 		</property>

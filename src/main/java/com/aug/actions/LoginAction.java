@@ -15,8 +15,8 @@ public class LoginAction extends ActionSupport{
     private EmployeeService employeeService;
     private Employee employee;
 
-    public void setEmployeeService(EmployeeService employeeBo) {
-        this.employeeService = employeeBo;
+    public void setEmployeeService(EmployeeService employeeService) {
+        this.employeeService = employeeService;
     }
 
     public void setEmployee(Employee employee) {
