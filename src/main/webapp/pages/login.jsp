@@ -22,7 +22,7 @@
                     <s:actionerror/>
                 </div>
             </s:if>
-            <form class="form-signin" action="login.action" method="post">
+            <form class="form-signin" action="login" method="post">
                 <s:textfield cssClass="form-control" autofocus="" require=""
                              placeholder="Username" name="employee.email"/>
                 <s:password cssClass="form-control" placeholder="Password"
