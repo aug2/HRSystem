@@ -1,41 +1,36 @@
 package com.aug.actions;
 
+import com.aug.entities.Employee;
+import com.aug.services.EmployeeService;
+import com.opensymphony.xwork2.ActionSupport;
 import org.apache.struts2.convention.annotation.Action;
 import org.apache.struts2.convention.annotation.Result;
 import org.apache.struts2.convention.annotation.ResultPath;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import com.aug.entities.Employee;
-import com.aug.services.EmployeeService;
-import com.opensymphony.xwork2.ActionSupport;
-
 @ResultPath(value = "/")
 public class LoginAction extends ActionSupport {
-	private static final long serialVersionUID = 1L;
-	
-	@Autowired
-	private EmployeeService employeeBo;
-	private Employee employee;
 
-	public void setEmployeeBo(EmployeeService employeeBo) {
-		this.employeeBo = employeeBo;
-	}
+    @Autowired
+    private EmployeeService employeeService;
+    private Employee employee;
 
-	public Employee getEmployee() {
-		return employee;
-	}
+    public void setEmployeeService(EmployeeService employeeService) {
+        this.employeeService = employeeService;
+    }
 
-	public void setEmployee(Employee employee) {
-		this.employee = employee;
-	}
+    public void setEmployee(Employee employee) {
+        this.employee = employee;
+    }
 
-	@Action(value = "login", results = {
-			@Result(name = "welcome", location = "welcome.tiles", type = "tiles"),
-			@Result(name = "input", location = "login.jsp") })
-	public String execute() {
-		
-		if (employeeBo.isLogin(employee))
-			return "welcome";
-		return "input";
-	}
+    @Action(value = "login", results = {@Result(name = "input", location = "pages/login.jsp"), @Result(name = "welcome", location = "pages/welcome.jsp")})
+    public String execute() {
+        if (employeeService.hasAuthentication(employee)) return "welcome";
+        return "input";
+    }
+
+    @Action(value = "initLogin", results = {@Result(name = "input", location = "pages/login.jsp")})
+    public String init() {
+        return INPUT;
+    }
 }
