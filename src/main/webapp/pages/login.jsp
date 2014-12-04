@@ -23,10 +23,8 @@
                 </div>
             </s:if>
             <form class="form-signin" action="login" method="post">
-                <s:textfield cssClass="form-control" autofocus="" require=""
-                             placeholder="Username" name="employee.email"/>
-                <s:password cssClass="form-control" placeholder="Password"
-                            name="employee.password"/>
+                <s:textfield cssClass="form-control" autofocus="" require="" placeholder="Email" name="employee.email"/>
+                <s:password cssClass="form-control" placeholder="Password" name="employee.password"/>
                 <div class="row">
                     <div class="col-xs-6">
                         <button class="btn btn-md btn-primary btn-block" type="submit">Login</button>
