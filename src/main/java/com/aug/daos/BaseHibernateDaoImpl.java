@@ -1,6 +1,5 @@
 package com.aug.daos;
 
-import com.aug.entities.Department;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -46,7 +45,7 @@ public abstract class BaseHibernateDaoImpl<T extends Serializable> implements Ba
     }
 
     @Transactional(readOnly = false)
-    public void delete(Department entity) {
+    public void delete(final T entity) {
         getCurrentSession().delete(entity);
     }
 
