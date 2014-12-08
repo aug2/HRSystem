@@ -4,8 +4,6 @@ import java.util.List;
 
 public interface BaseHibernateDao<T> {
 
-    public void setClazz(final Class<T> clazzToSet);
-
     public T getById(final Integer id);
 
     public List<T> findAll();

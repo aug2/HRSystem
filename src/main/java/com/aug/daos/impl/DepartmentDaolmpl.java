@@ -15,26 +15,6 @@ public class DepartmentDaolmpl extends BaseHibernateDaoImpl<Department> implemen
     }
 
     @Override
-    public Department getById(Integer id) {
-        return (Department)getCurrentSession().get(Department.class, id);
-    }
-
-    @Override
-    public void save(Department department) {
-        getCurrentSession().persist(department);
-    }
-
-    @Override
-    public void update(Department department) {
-        getCurrentSession().update(department);
-    }
-
-    @Override
-    public void delete(Department entity) {
-        getCurrentSession().delete(entity);
-    }
-
-    @Override
     public boolean deleteDepartmentById(int departmentId) {
         Department department = getById(departmentId);
         if (department == null) {

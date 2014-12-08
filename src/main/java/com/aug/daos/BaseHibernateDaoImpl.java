@@ -1,5 +1,6 @@
 package com.aug.daos;
 
+import com.aug.entities.Department;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -42,6 +43,11 @@ public abstract class BaseHibernateDaoImpl<T extends Serializable> implements Ba
     @Transactional(readOnly = false)
     public void update(final T entity) {
         getCurrentSession().merge(entity);
+    }
+
+    @Transactional(readOnly = false)
+    public void delete(Department entity) {
+        getCurrentSession().delete(entity);
     }
 
     public final Session getCurrentSession() {
