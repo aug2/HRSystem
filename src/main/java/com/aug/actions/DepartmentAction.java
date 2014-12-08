@@ -53,12 +53,7 @@ public class DepartmentAction extends ActionSupport {
 
     @Action(value = "department", results = {@Result(name = "input", location = "pages/department.jsp"), @Result(name = "success", location = "pages/welcome.jsp")})
     public String execute() {
-        if (departmentService.hasAuthentication(department)) {
             return "success";
-        } else {
-            addActionError("name incorrect!!!");
-            return "input";
-        }
     }
 
     @Action(value = "initDepartment", results = {@Result(name = "input", location = "pages/department.jsp")})
@@ -67,7 +62,7 @@ public class DepartmentAction extends ActionSupport {
     }
 
     @Action(value = "adddepartment", results = {@Result(name = "welcome", location = "pages/welcome.jsp")})
-    public String executeAddDe() {
+    public String executeAddDe() throws Exception {
         departmentService.save(department);
         return "welcome";
     }
