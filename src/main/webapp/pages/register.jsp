@@ -3,25 +3,70 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="author" content="">
 <title>Register</title>
+<link rel="stylesheet" href="css/bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" href="css/custom.css">
+<script type="text/javascript">
+	
+	function validate(){
+		var email = document.getElementById("email");
+		var password = document.getElementById("password");
+		
+		if(email.value ==="" || password.value ==="")
+			{
+				alert("Please fill-in sername or password");
+				return false;
+			}
+		else{
+			document.forms[0].submit();
+		}
+	}
+</script>
 </head>
 <body>
-	<s:form >
-	    <s:textfield name="id" label="Id" id="id" />
-	    <s:textfield name="email" label="Email" id="email" />
-		<s:password name="password" label="Password" id="password" />
-		<td>
-		<select name="geder" label ="Gender">
-		<option value="Male">Male</option>
-		<option value="Female">Female</option>
-		</select>
-		</td>
-		<s:textfield name="name" label="Name" id="name" />
-		<s:textfield name="lastname" label="Lastname" id="lastname" />
-		<s:textarea name="address" label="Address" id="address" />
-		<s:textarea name="tel" label="Tel" id="tel" />
-		<s:submit />
-	</s:form>
+	<div class="navbar navbar-fixed-top">
+		<div class="navbar-inner">
+			<div class="container">
+				<div class="row">
+					<div class="col-xs-12">
+						<form class="form-signin" action="register">
+							<s:textfield cssClass="form-control" autofocus="" require=""
+								placeholder="Email" name="employee.email" />
+							<s:password cssClass="form-control" placeholder="Password"
+								name="employee.password" />
+							<select name="geder" label="Gender">
+								<option value="Male">Male</option>
+								<option value="Female">Female</option>
+							</select>
+							<s:textfield cssClass="form-control" placeholder="Name"
+								name="employee.name" />
+							<s:textfield cssClass="form-control" placeholder="Lastname"
+								name="employee.lastname" />
+							<s:textfield cssClass="form-control" placeholder="Age"
+								name="employee.age" />
+							<s:textarea cssClass="form-control" placeholder="Address"
+								name="employee.address" />
+							<s:textfield cssClass="form-control" placeholder="Telephone"
+								name="employee.telephone" />
+							<div class="row">
+								<div class="col-xs-6">
+									<button class="btn btn-md btn-primary btn-block" type="submit">OK</button>
+								</div>
+								<div class="col-xs-6">
+									<button class="btn btn-md btn-primary btn-block" type="reset">Cancel</button>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="css/js/bootstrap.min.js"></script>
 </body>
 </html>

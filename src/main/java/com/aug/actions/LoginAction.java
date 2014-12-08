@@ -29,12 +29,18 @@ public class LoginAction extends ActionSupport {
 
     @Action(value = "login", results = {@Result(name = "input", location = "pages/login.jsp"), @Result(name = "welcome", location = "pages/welcome.jsp")})
     public String execute() {
-        if (employeeService.hasAuthentication(employee)) return "welcome";
-        return "input";
+        if (employeeService.hasAuthentication(employee)) 
+        	return "welcome";
+        else {
+			addActionError("Username or password incorrect !!!");
+			return "input";
+		}
     }
 
     @Action(value = "initLogin", results = {@Result(name = "input", location = "pages/login.jsp")})
     public String init() {
         return INPUT;
     }
+    
+    
 }

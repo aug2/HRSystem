@@ -2,11 +2,15 @@ package com.aug.services;
 
 import com.aug.daos.EmployeeDao;
 import com.aug.entities.Employee;
+
+import org.hamcrest.core.Is;
+import org.hamcrest.core.IsNot;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
+import org.mockito.internal.matchers.Not;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
@@ -39,10 +43,18 @@ public class EmployeeServiceTest {
         MockitoAnnotations.initMocks(this);
         employeeService.setEmployeeDao(mockEmployeeDao);
 
-		employee = new Employee();
-		employees = new ArrayList<>();
+		//employee = new Employee();
+		//employees = new ArrayList<>();
 	}
-
+	@Test
+	public void saveSuccess() {
+//		Employee emp =new Employee();
+//		emp.setEmail("test@gmail.com");
+		employee.setEmail("test");
+		mockEmployeeDao.save(employee);
+		assertThat(employeeService.save(employee), is(true));
+        verify(mockEmployeeDao, times(1)).save(employee);
+	}
 	@Test
 	public void shouldBeTrueWhenUserLoginExistInDB() {
 		employees.add(employee);
@@ -59,4 +71,24 @@ public class EmployeeServiceTest {
 
         verify(mockEmployeeDao, times(1)).findUserByEmailPassword(any(Employee.class));
 	}
+	
+	@Test
+	public void shouldBeReturnEmployeeLessThanZero() {
+        when(mockEmployeeDao.findAll()).thenReturn(employees);
+		assertThat(employeeService.findAll().size(), is(0));
+
+        verify(mockEmployeeDao, times(1)).findAll();
+	}
+	
+	@Test
+	public void shouldBeReturnEmployeeMoreThanZero() {
+		employees.add(employee);
+        when(mockEmployeeDao.findAll()).thenReturn(employees);
+		assertThat(employeeService.findAll().size(), IsNot.not(0));
+
+        verify(mockEmployeeDao, times(1)).findAll();
+	}
+	
+
+
 }

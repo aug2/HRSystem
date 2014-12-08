@@ -8,4 +8,11 @@ public interface EmployeeDao {
     public List<Employee> findUserByEmailPassword(Employee employee);
 
     public void save(Employee employee);
+
+	public List<Employee> findAll();
+
+	public void delete(Integer id);
+
+	List<Employee> findById(Employee employee);
+	
 }
