@@ -1,13 +1,12 @@
-
 package com.aug.services;
-
-import java.util.List;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 
 import com.aug.daos.EmployeeDao;
 import com.aug.entities.Employee;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
+
 @Service
 public class EmployeeService {
 
@@ -22,21 +21,19 @@ public class EmployeeService {
     public void setEmployeeDao(EmployeeDao employeeDao) {
         this.employeeDao = employeeDao;
     }
-    
+
     public void save(Employee employee) {
-		employeeDao.save(employee);
-	}
+        employeeDao.save(employee);
+    }
 
-	public boolean delete(Integer id) {
-		//employeeDao.delete(employee);
-		return true;
-	}
+    public boolean delete(Integer id) {
+        return true;
+    }
 
-	public List<Employee> findAll() {
-		List<Employee> employees = employeeDao.findAll();
-		return employees;
-	}
-	
-	
-	
+    public List<Employee> findAll() {
+        List<Employee> employees = employeeDao.findAll();
+        return employees;
+    }
+
+
 }

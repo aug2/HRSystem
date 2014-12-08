@@ -1,4 +1,3 @@
-
 package com.aug.daos;
 
 import com.aug.entities.Employee;
@@ -10,8 +9,8 @@ public interface EmployeeDao {
 
     public void save(Employee employee);
 
-	public List<Employee> findAll();
+    public List<Employee> findAll();
 
-	
+
 }
 

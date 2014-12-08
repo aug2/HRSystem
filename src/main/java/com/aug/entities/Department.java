@@ -10,7 +10,7 @@ import javax.persistence.Table;
 @Table(name = "DEPARTMENT")
 public class Department {
 
-	@Id
+    @Id
     @Column(name = "ID")
     @GeneratedValue
     private Integer id;
@@ -18,21 +18,21 @@ public class Department {
     @Column(name = "NAME", nullable = false, unique = true)
     private String name;
 
-	public Integer getId() {
-		return id;
-	}
+    public Integer getId() {
+        return id;
+    }
 
-	public void setId(Integer id) {
-		this.id = id;
-	}
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
-	public String getName() {
-		return name;
-	}
+    public String getName() {
+        return name;
+    }
 
-	public void setName(String name) {
-		this.name = name;
-	}
-    
-    
+    public void setName(String name) {
+        this.name = name;
+    }
+
+
 }

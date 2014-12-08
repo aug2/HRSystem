@@ -1,7 +1,7 @@
 package com.aug.daos.impl;
 
-import java.util.List;
-
+import com.aug.daos.DepartmentDao;
+import com.aug.entities.Department;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -9,14 +9,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.aug.daos.DepartmentDao;
-import com.aug.entities.Department;
+import java.util.List;
 
 @Repository
 @Transactional
-public class DepartmentDaolmpl implements DepartmentDao{
+public class DepartmentDaolmpl implements DepartmentDao {
 
-	@Autowired
+    @Autowired
     SessionFactory sessionFactory;
 
     @Override
@@ -27,33 +26,33 @@ public class DepartmentDaolmpl implements DepartmentDao{
         return query.list();
     }
 
-	@Override
+    @Override
     public void save(Department department) {
         getCurrentSession().persist(department);
     }
-	
-	@Override
+
+    @Override
     public void update(Department department) {
         getCurrentSession().update(department);
     }
-	
-	@Override
-	public List<Department> findAllDepartmentAll() {
-		String hql = "FROM Department";
+
+    @Override
+    public List<Department> findAllDepartmentAll() {
+        String hql = "FROM Department";
         Query query = getCurrentSession().createQuery(hql);
-        return query.list(); 
-        
+        return query.list();
+
     }
 
-	public SessionFactory getSessionFactory() {
-		return sessionFactory;
-	}
+    public SessionFactory getSessionFactory() {
+        return sessionFactory;
+    }
 
-	public void setSessionFactory(SessionFactory sessionFactory) {
-		this.sessionFactory = sessionFactory;
-	}
-	
-	public final Session getCurrentSession() {
+    public void setSessionFactory(SessionFactory sessionFactory) {
+        this.sessionFactory = sessionFactory;
+    }
+
+    public final Session getCurrentSession() {
         return sessionFactory.getCurrentSession();
     }
 
