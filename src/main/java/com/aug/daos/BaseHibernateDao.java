@@ -8,7 +8,7 @@ public interface BaseHibernateDao<T> {
 
     public List<T> findAll();
 
-    public void save(final T entity) throws Exception;
+    public void save(final T entity);
 
     public void update(final T entity);
 
