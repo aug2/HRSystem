@@ -36,6 +36,7 @@
                 </div>
             </s:if>
             <form class="form-signin" action="updatedepartment" method="post">
+                <s:textfield id="departmentId" name="department.id"/>
                 <s:textfield cssClass="form-control" autofocus="" require=""
                              placeholder="Departmentname" name="department.name"
                              id="departmentname"/>

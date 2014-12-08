@@ -18,6 +18,18 @@ public class DepartmentDaolmpl implements DepartmentDao {
     @Autowired
     SessionFactory sessionFactory;
 
+    public SessionFactory getSessionFactory() {
+        return sessionFactory;
+    }
+
+    public void setSessionFactory(SessionFactory sessionFactory) {
+        this.sessionFactory = sessionFactory;
+    }
+
+    public final Session getCurrentSession() {
+        return sessionFactory.getCurrentSession();
+    }
+
     @Override
     public List<Department> findNameDepartment(Department department) {
         String hql = "FROM Department de WHERE de.name = :name";
@@ -44,16 +56,20 @@ public class DepartmentDaolmpl implements DepartmentDao {
 
     }
 
-    public SessionFactory getSessionFactory() {
-        return sessionFactory;
+    @Override
+    public Department findDepartmentById(int departmentId) {
+        return (Department)getCurrentSession().get(Department.class, departmentId);
     }
 
-    public void setSessionFactory(SessionFactory sessionFactory) {
-        this.sessionFactory = sessionFactory;
-    }
+    @Override
+    public boolean deleteDepartmentById(int departmentId) {
+        Department department = findDepartmentById(departmentId);
+        if (department == null) {
+            return false;
+        }
 
-    public final Session getCurrentSession() {
-        return sessionFactory.getCurrentSession();
-    }
+        getCurrentSession().delete(department);
 
+        return true;
+    }
 }

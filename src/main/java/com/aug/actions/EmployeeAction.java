@@ -51,7 +51,6 @@ public class EmployeeAction extends ActionSupport {
         else return "welcome";
     }
 
-
     @Action(value = "register", results = {@Result(name = "success", location = "pages/success.jsp"), @Result(name = "input", location = "pages/register.jsp")})
     public String save() {
         employeeService.save(employee);

@@ -70,7 +70,6 @@ public class DepartmentAction extends ActionSupport {
     public String executeAddDe() {
         departmentService.save(department);
         return "welcome";
-
     }
 
     @Action(value = "initAddDepartment", results = {@Result(name = "input", location = "pages/adddepartment.jsp")})
@@ -78,20 +77,27 @@ public class DepartmentAction extends ActionSupport {
         return INPUT;
     }
 
-    @Action(value = "updatedepartment", results = {@Result(name = "welcome", location = "pages/welcome.jsp")})
+    @Action(value = "updatedepartment", results = {@Result(name = "success", location = "listalldepartment", type = "redirect")})
     public String executeUpdateDe() {
-
-        int test = id;
         departmentService.update(department);
-        return "welcome";
-
+        return SUCCESS;
     }
 
 
     @Action(value = "initUpdateDepartment", results = {@Result(name = "success", location = "pages/updatedepartment.jsp")})
     public String initUpdate() {
+        department = departmentService.findDepartmentById(id);
         return "success";
+    }
 
+    @Action(value = "deleteDepartment", results = {
+            @Result(name = "success", location = "listalldepartment", type = "redirect"),
+            @Result(name = "input", location = "listalldepartment", type = "redirect")
+    })
+    public String deleteDepartment() {
+        if(departmentService.deleteDepartmentById(id))
+            return SUCCESS;
+        return INPUT;
     }
 
     @Action(value = "listalldepartment", results = {@Result(name = "success", location = "pages/listdepartment.jsp")})

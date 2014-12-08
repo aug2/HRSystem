@@ -14,4 +14,8 @@ public interface DepartmentDao {
 
     public List<Department> findAllDepartmentAll();
 
+    public Department findDepartmentById(int departmentId);
+
+    public boolean deleteDepartmentById(int departmentId);
+
 }

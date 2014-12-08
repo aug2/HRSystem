@@ -31,7 +31,8 @@
             <form class="form-signin" action="listalldepartment" method="post">
                 <s:iterator value="departments">
                     <s:property value="name"/>
-                    <a href="updatedepartment?id=<s:property value="id" />">Edit</a>
+                    <a href="initUpdateDepartment?id=<s:property value="id" />">Edit</a> |
+                    <a href="deleteDepartment?id=<s:property value="id" />">Delete</a>
                     <br>
                 </s:iterator>
                 <div class="row">

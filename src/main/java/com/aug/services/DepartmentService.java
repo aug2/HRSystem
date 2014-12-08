@@ -28,16 +28,22 @@ public class DepartmentService {
 
     public void save(Department department) {
         departmentDao.save(department);
-
     }
 
     public void update(Department department) {
         departmentDao.update(department);
-
     }
 
     public List<Department> findAllDepartment() {
         return departmentDao.findAllDepartmentAll();
+    }
+
+    public Department findDepartmentById(int departmentId) {
+        return departmentDao.findDepartmentById(departmentId);
+    }
+
+    public boolean deleteDepartmentById(int departmentId) {
+        return departmentDao.deleteDepartmentById(departmentId);
     }
 
 
