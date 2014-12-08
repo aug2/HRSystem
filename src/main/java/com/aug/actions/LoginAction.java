@@ -1,13 +1,14 @@
+
 package com.aug.actions;
 
-import com.aug.entities.Employee;
-import com.aug.services.EmployeeService;
-import com.opensymphony.xwork2.ActionSupport;
 import org.apache.struts2.convention.annotation.Action;
 import org.apache.struts2.convention.annotation.Result;
 import org.apache.struts2.convention.annotation.ResultPath;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import com.aug.entities.Employee;
+import com.aug.services.EmployeeService;
+import com.opensymphony.xwork2.ActionSupport;
 @ResultPath(value = "/")
 public class LoginAction extends ActionSupport {
 
@@ -47,4 +48,10 @@ public class LoginAction extends ActionSupport {
 	public String init() {
 		return INPUT;
 	}
+
+
+
+
+    
+
 }

@@ -1,7 +1,15 @@
 package com.aug.services;
 
-import com.aug.daos.EmployeeDao;
-import com.aug.entities.Employee;
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.core.Is.is;
+import static org.mockito.Matchers.any;
+import static org.mockito.Mockito.times;
+import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.when;
+
+import java.util.ArrayList;
+import java.util.List;
+
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -11,15 +19,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.core.Is.is;
-import static org.mockito.Matchers.any;
-import static org.mockito.Mockito.times;
-import static org.mockito.Mockito.verify;
-import static org.mockito.Mockito.when;
+import com.aug.daos.EmployeeDao;
+import com.aug.entities.Employee;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = {"classpath:spring-test.xml"})
@@ -39,9 +40,11 @@ public class EmployeeServiceTest {
         MockitoAnnotations.initMocks(this);
         employeeService.setEmployeeDao(mockEmployeeDao);
 
+
 		employee = new Employee();
 		employees = new ArrayList<>();
 	}
+
 
 	@Test
 	public void shouldBeTrueWhenUserLoginExistInDB() {
@@ -59,4 +62,6 @@ public class EmployeeServiceTest {
 
         verify(mockEmployeeDao, times(1)).findUserByEmailPassword(any(Employee.class));
 	}
+
+
 }

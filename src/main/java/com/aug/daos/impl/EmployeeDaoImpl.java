@@ -1,7 +1,8 @@
+
 package com.aug.daos.impl;
 
-import com.aug.daos.EmployeeDao;
-import com.aug.entities.Employee;
+import java.util.List;
+
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -9,8 +10,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.List;
-
+import com.aug.daos.EmployeeDao;
+import com.aug.entities.Employee;
 @Repository
 @Transactional
 public class EmployeeDaoImpl implements EmployeeDao {
@@ -40,4 +41,13 @@ public class EmployeeDaoImpl implements EmployeeDao {
     public void setSessionFactory(SessionFactory sessionFactory) {
         this.sessionFactory = sessionFactory;
     }
+
+	@Override
+	public List<Employee> findAll() {
+		Query query = getCurrentSession().createQuery("FROM Employee");
+		List<Employee> emp = query.list();
+		return emp;
+	}
 }
+
+

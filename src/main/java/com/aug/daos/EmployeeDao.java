@@ -1,3 +1,4 @@
+
 package com.aug.daos;
 
 import com.aug.entities.Employee;
@@ -8,4 +9,9 @@ public interface EmployeeDao {
     public List<Employee> findUserByEmailPassword(Employee employee);
 
     public void save(Employee employee);
+
+	public List<Employee> findAll();
+
+	
 }
+

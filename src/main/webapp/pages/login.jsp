@@ -17,6 +17,7 @@
 		document.forms[0].action = "initRegister";
 		document.forms[0].submit();
 	}
+
 	function department() {
 		document.forms[0].action = "initDepartment";
 		document.forms[0].submit();
@@ -39,10 +40,12 @@
 			password.focus();
 			return false;
 		} else {
+
 			document.forms[0].submit();
 		}
 	}
 </script>
+
 </head>
 <body>
 	<div class="navbar navbar-fixed-top">
@@ -55,6 +58,7 @@
 				</s:if>
 				<form class="form-signin" action="login" method="post">
 					<s:textfield cssClass="form-control" autofocus="" require=""
+
 						placeholder="Email" name="employee.email" id="email"/>
 					<s:password cssClass="form-control" placeholder="Password"
 						name="employee.password" id="password" />
@@ -74,6 +78,7 @@
 								onclick="department()">Department</button>
 						</div>
 						
+
 					</div>
 				</form>
 			</div>

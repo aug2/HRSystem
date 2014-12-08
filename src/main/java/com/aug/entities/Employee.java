@@ -1,3 +1,4 @@
+
 package com.aug.entities;
 
 import javax.persistence.Column;
@@ -5,7 +6,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
-
 @Entity
 @Table(name = "EMPLOYEE")
 public class Employee {
@@ -43,4 +43,6 @@ public class Employee {
     public String getEmail() {
         return email;
     }
+
 }
+

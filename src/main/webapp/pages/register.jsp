@@ -1,7 +1,9 @@
+
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="s" uri="/struts-tags"%>
 <!DOCTYPE html>
+
 <html>
 <head>
 <meta charset="utf-8">
@@ -13,6 +15,7 @@
 <link rel="stylesheet" href="css/bootstrap/css/bootstrap.min.css">
 <link rel="stylesheet" href="css/custom.css">
 <script type="text/javascript">
+
 	function ok() {
 		var email = document.getElementById("email");
 		var password = document.getElementById("password");
@@ -30,6 +33,7 @@
 			password.focus();
 			return false;
 		} else {
+
 			document.forms[0].submit();
 		}
 	}
@@ -39,6 +43,7 @@
 	<div class="navbar navbar-fixed-top">
 		<div class="navbar-inner">
 			<div class="container">
+
 				<s:if test="hasActionErrors()">
 					<div class="alert alert-danger">
 						<s:actionerror />
@@ -58,6 +63,7 @@
 						</div>
 					</div>
 				</form>
+
 			</div>
 		</div>
 	</div>
