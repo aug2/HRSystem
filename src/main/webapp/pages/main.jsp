@@ -100,8 +100,8 @@
                     <span class="sr-only">Toggle Dropdown</span>
                 </button>
                 <ul class="dropdown-menu">
-                    <li><a href="#">List All</a></li>
-                    <li><a href="#">Add</a></li>
+                    <li><a href="listalljub">List All</a></li>
+                    <li><a href="initCreate">Add</a></li>
                 </ul>
             </div>
         </div>
