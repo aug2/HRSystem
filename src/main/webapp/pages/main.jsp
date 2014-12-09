@@ -89,8 +89,8 @@
                     <span class="sr-only">Toggle Dropdown</span>
                 </button>
                 <ul class="dropdown-menu">
-                    <li><a href="#">List All</a></li>
-                    <li><a href="#">Add</a></li>
+                    <li><a href="ListAll">List All</a></li>
+                    <li><a href="initAddMay">Add</a></li>
                 </ul>
             </div>
             <div class="btn-group">
