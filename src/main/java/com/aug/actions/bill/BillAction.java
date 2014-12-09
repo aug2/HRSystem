@@ -5,7 +5,10 @@ import com.aug.actions.BaseAction;
 import org.apache.struts2.convention.annotation.ResultPath;
 
 @ResultPath(value = "/")
-public class BillAction implements BaseAction{
+public class BillAction implements BaseAction {
+	//public class BillAction implements BaseAction extends ActionSupport{
+	
+	
     @Override
     public String initCreate() {
         return null;

@@ -1,9 +1,29 @@
 package com.aug.daos.bill;
 
-import com.aug.daos.BaseHibernateDao;
+import java.util.List;
+
+import com.aug.daos.BaseHibernateDaoImpl;
 import com.aug.entities.bill.Bill;
 
-public interface BillDao extends BaseHibernateDao<Bill> {
+import org.hibernate.SessionFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 
-    public boolean deleteById(int id);
+@Repository
+public class BillDao extends BaseHibernateDaoImpl<Bill>{
+
+    protected BillDao() {
+        super(Bill.class);
+    }
+    
+    
+    @Autowired
+    SessionFactory sessionFactory;
+ 
+
+
+public boolean deleteBillById(int billId) {
+	
+	return false;
+}
 }
