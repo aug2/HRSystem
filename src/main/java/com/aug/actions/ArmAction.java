@@ -18,9 +18,34 @@ public class ArmAction extends ActionSupport implements BaseAction{
 
     private List<Arm> arms;
 
+    private Arm model;
+
+
+    public void setArmService(ArmService armService) {
+        this.armService = armService;
+    }
+
+    public List<Arm> getArms() {
+        return arms;
+    }
+
+    public void setArms(List<Arm> arms) {
+        this.arms = arms;
+    }
+
+    public Arm getModel() {
+        return model;
+    }
+
+    public void setModel(Arm model) {
+        this.model = model;
+    }
+
     @Override
+    @Action(value = "armInitAdd", results = {
+            @Result(name = "input", location = "pages/arm/entry.jsp")})
     public String initCreate() {
-        return null;
+        return INPUT;
     }
 
     @Override
@@ -41,12 +66,18 @@ public class ArmAction extends ActionSupport implements BaseAction{
     }
 
     @Override
+    @Action(value = "armAdd", results = {
+            @Result(name = "input", location = "pages/arm/entry.jsp"),
+            @Result(name = "success", location = "armList.action", type = "redirect")
+    })
     public String create() {
-        return null;
+        armService.insert(model);
+
+        return SUCCESS;
     }
 
     @Override
-    @Action(value = "list", results = {
+    @Action(value = "armList", results = {
             @Result(name = "input", location = "pages/arm/list.jsp"),
             @Result(name = "success", location = "pages/arm/list.jsp")
     })

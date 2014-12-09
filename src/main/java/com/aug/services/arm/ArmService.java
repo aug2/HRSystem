@@ -20,4 +20,8 @@ public class ArmService {
     public List<Arm> findAll(){
         return armDao.findAll();
     }
+
+    public void insert(Arm entry) {
+        armDao.save(entry);
+    }
 }
