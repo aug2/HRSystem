@@ -15,6 +15,10 @@ public abstract class BaseEntity {
 
     @Column(name = "NAME", nullable = false, unique = true)
     private String name;
+    
+    
+  
+    
 	public Integer getId() {
 		return id;
 	}
