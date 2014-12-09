@@ -24,4 +24,16 @@ public class ArmService {
     public void insert(Arm entry) {
         armDao.save(entry);
     }
+
+    public boolean delete(Integer id) {
+        return armDao.deleteById(id);
+    }
+
+    public Arm findById(Integer id) {
+        return armDao.getById(id);
+    }
+
+    public void update(Arm entry) {
+        armDao.update(entry);
+    }
 }

@@ -23,7 +23,7 @@
                     <span class="sr-only">Toggle Dropdown</span>
                 </button>
                 <ul class="dropdown-menu">
-                    <li><a href="armInitList.action">List All</a></li>
+                    <li><a href="armList.action">List All</a></li>
                     <li><a href="armInitAdd.action">Add</a></li>
                 </ul>
             </div>

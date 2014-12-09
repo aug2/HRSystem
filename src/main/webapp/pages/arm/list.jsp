@@ -16,7 +16,7 @@
 <div class="navbar navbar-fixed-top">
     <div class="navbar-inner">
         <s:iterator value="arms">
-            <s:property value="name"/> <a href="armEdit?id=<s:property value="id" />">Edit</a> | <a href="armDelete?id=<s:property value="id" />">Delete</a>
+            <s:property value="name"/> <a href="armInitUpdate?id=<s:property value="id" />">Edit</a> | <a href="armDelete?id=<s:property value="id" />">Delete</a>
         </s:iterator>
     </div>
 </div>

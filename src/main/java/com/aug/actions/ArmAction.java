@@ -20,6 +20,15 @@ public class ArmAction extends ActionSupport implements BaseAction{
 
     private Arm model;
 
+    private Integer id;
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
     public void setArmService(ArmService armService) {
         this.armService = armService;
@@ -56,8 +65,11 @@ public class ArmAction extends ActionSupport implements BaseAction{
     }
 
     @Override
+    @Action(value = "armInitUpdate", results = {
+            @Result(name = "input", location = "pages/arm/entry.jsp")})
     public String initUpdate() {
-        return null;
+        model = armService.findById(id);
+        return INPUT;
     }
 
     @Override
@@ -88,12 +100,24 @@ public class ArmAction extends ActionSupport implements BaseAction{
     }
 
     @Override
+    @Action(value = "armUpdate", results = {
+            @Result(name = "input", location = "pages/arm/entry.jsp"),
+            @Result(name = "success", location = "armList.action", type = "redirect")
+    })
     public String update() {
-        return null;
+        armService.update(model);
+
+        return SUCCESS;
     }
 
     @Override
+    @Action(value = "armDelete", results = {
+            @Result(name = "input", location = "pages/arm/entry.jsp"),
+            @Result(name = "success", location = "armList.action", type = "redirect")
+    })
     public String delete() {
-        return null;
+        if(armService.delete(id))
+            return SUCCESS;
+        return INPUT;
     }
 }

@@ -17,6 +17,11 @@
             document.forms[0].submit();
         }
 
+        function update() {
+            document.forms[0].action = "armUpdate";
+            document.forms[0].submit();
+        }
+
         function clear() {
             document.forms[0].action = "armInitAdd";
             document.forms[0].submit();
@@ -33,11 +38,13 @@
                 </div>
             </s:if>
             <form class="form-signin" action="armAdd.action" method="post">
+                <s:textfield name="model.id" id="id"/>
                 <s:textfield cssClass="form-control" placeholder="Full Name" name="model.name" id="name"/>
                 <s:textfield cssClass="form-control" placeholder="Email" name="model.email" id="email"/>
                 <s:textfield cssClass="form-control" placeholder="Age" name="model.age" id="age"/>
                 <s:textfield cssClass="form-control" placeholder="Owner" name="model.arm" id="owner"/>
                 <button class="btn btn-md btn-primary" onclick="add()">Add</button>
+                <button class="btn btn-md btn-primary" onclick="update()">Update</button>
                 <button class="btn btn-md btn-primary" onclick="clear()">Clear</button>
             </form>
         </div>
