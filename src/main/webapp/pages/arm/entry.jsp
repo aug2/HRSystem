@@ -38,7 +38,7 @@
                 </div>
             </s:if>
             <form class="form-signin" action="armAdd.action" method="post">
-                <s:textfield name="model.id" id="id"/>
+                <s:hidden name="model.id" id="id"/>
                 <s:textfield cssClass="form-control" placeholder="Full Name" name="model.name" id="name"/>
                 <s:textfield cssClass="form-control" placeholder="Email" name="model.email" id="email"/>
                 <s:textfield cssClass="form-control" placeholder="Age" name="model.age" id="age"/>

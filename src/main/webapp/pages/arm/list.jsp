@@ -15,9 +15,31 @@
 <body>
 <div class="navbar navbar-fixed-top">
     <div class="navbar-inner">
-        <s:iterator value="arms">
-            <s:property value="name"/> <a href="armInitUpdate?id=<s:property value="id" />">Edit</a> | <a href="armDelete?id=<s:property value="id" />">Delete</a>
-        </s:iterator>
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-3"><a href="armInitAdd.action">Add New</a></div>
+            </div>
+            <s:if test="%{#arms.size() <= 0}">
+                This is String 1
+            </s:if>
+            <div class="row">
+                <div class="col-xs-2">No</div>
+                <div class="col-xs-2">Name</div>
+                <div class="col-xs-3">Email</div>
+                <div class="col-xs-2">Age</div>
+                <div class="col-xs-3">Actions</div>
+            </div>
+            <s:iterator value="arms" status="armStatus">
+                <div class="row">
+                    <div class="col-xs-2"><s:property value="%{#armStatus.index + 1}"/></div>
+                    <div class="col-xs-2"><s:property value="name"/></div>
+                    <div class="col-xs-3"><s:property value="email"/></div>
+                    <div class="col-xs-2"><s:property value="age"/></div>
+                    <div class="col-xs-3"><a href="armInitUpdate?id=<s:property value="id" />">Edit</a> | <a
+                            href="armDelete?id=<s:property value="id" />">Delete</a></div>
+                </div>
+            </s:iterator>
+        </div>
     </div>
 </div>
 <script src="js/jquery-1.11.1.min.js"></script>
