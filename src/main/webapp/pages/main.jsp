@@ -17,6 +17,17 @@
     <div class="navbar-inner">
         <div class="container"><br>
             <div class="btn-group">
+                <button type="button" class="btn btn-primary">Arm</button>
+                <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                    <span class="caret"></span>
+                    <span class="sr-only">Toggle Dropdown</span>
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a href="#">List All</a></li>
+                    <li><a href="#">Add</a></li>
+                </ul>
+            </div>
+            <div class="btn-group">
                 <button type="button" class="btn btn-primary">Va</button>
                 <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
                     <span class="caret"></span>
