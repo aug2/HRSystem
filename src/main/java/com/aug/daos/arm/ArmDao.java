@@ -1,15 +1,9 @@
 package com.aug.daos.arm;
 
-import com.aug.daos.BaseHibernateDaoImpl;
+import com.aug.daos.BaseHibernateDao;
 import com.aug.entities.arm.Arm;
-import org.springframework.stereotype.Repository;
-import org.springframework.transaction.annotation.Transactional;
 
-@Repository
-@Transactional
-public class ArmDao extends BaseHibernateDaoImpl<Arm>{
+public interface ArmDao extends BaseHibernateDao<Arm>{
 
-    protected ArmDao() {
-        super(Arm.class);
-    }
+    public boolean deleteById(int id);
 }

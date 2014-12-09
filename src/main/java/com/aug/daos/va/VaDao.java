@@ -1,13 +1,9 @@
 package com.aug.daos.va;
 
-import com.aug.daos.BaseHibernateDaoImpl;
+import com.aug.daos.BaseHibernateDao;
 import com.aug.entities.va.Va;
-import org.springframework.stereotype.Repository;
 
-@Repository
-public class VaDao extends BaseHibernateDaoImpl<Va>{
+public interface VaDao extends BaseHibernateDao<Va> {
 
-    protected VaDao() {
-        super(Va.class);
-    }
+    public boolean deleteById(int id);
 }
