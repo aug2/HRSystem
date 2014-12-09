@@ -1,13 +1,9 @@
 package com.aug.daos.may;
 
-import com.aug.daos.BaseHibernateDaoImpl;
+import com.aug.daos.BaseHibernateDao;
 import com.aug.entities.may.May;
-import org.springframework.stereotype.Repository;
 
-@Repository
-public class MayDao extends BaseHibernateDaoImpl<May>{
+public interface MayDao extends BaseHibernateDao<May> {
 
-    protected MayDao() {
-        super(May.class);
-    }
+    public boolean deleteById(int id);
 }

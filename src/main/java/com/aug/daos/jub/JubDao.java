@@ -1,13 +1,9 @@
 package com.aug.daos.jub;
 
-import com.aug.daos.BaseHibernateDaoImpl;
+import com.aug.daos.BaseHibernateDao;
 import com.aug.entities.jub.Jub;
-import org.springframework.stereotype.Repository;
 
-@Repository
-public class JubDao extends BaseHibernateDaoImpl<Jub>{
+public interface JubDao extends BaseHibernateDao<Jub> {
 
-    protected JubDao() {
-        super(Jub.class);
-    }
+    public boolean deleteById(int id);
 }

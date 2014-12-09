@@ -1,13 +1,9 @@
 package com.aug.daos.parn;
 
-import com.aug.daos.BaseHibernateDaoImpl;
+import com.aug.daos.BaseHibernateDao;
 import com.aug.entities.parn.Parn;
-import org.springframework.stereotype.Repository;
 
-@Repository
-public class ParnDao extends BaseHibernateDaoImpl<Parn>{
+public interface ParnDao extends BaseHibernateDao<Parn> {
 
-    protected ParnDao() {
-        super(Parn.class);
-    }
+    public boolean deleteById(int id);
 }

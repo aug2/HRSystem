@@ -1,13 +1,9 @@
 package com.aug.daos.bill;
 
-import com.aug.daos.BaseHibernateDaoImpl;
+import com.aug.daos.BaseHibernateDao;
 import com.aug.entities.bill.Bill;
-import org.springframework.stereotype.Repository;
 
-@Repository
-public class BillDao extends BaseHibernateDaoImpl<Bill>{
+public interface BillDao extends BaseHibernateDao<Bill> {
 
-    protected BillDao() {
-        super(Bill.class);
-    }
+    public boolean deleteById(int id);
 }

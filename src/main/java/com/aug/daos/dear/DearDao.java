@@ -1,13 +1,9 @@
 package com.aug.daos.dear;
 
-import com.aug.daos.BaseHibernateDaoImpl;
+import com.aug.daos.BaseHibernateDao;
 import com.aug.entities.dear.Dear;
-import org.springframework.stereotype.Repository;
 
-@Repository
-public class DearDao extends BaseHibernateDaoImpl<Dear>{
+public interface DearDao extends BaseHibernateDao<Dear> {
 
-    protected DearDao() {
-        super(Dear.class);
-    }
+    public boolean deleteById(int id);
 }
