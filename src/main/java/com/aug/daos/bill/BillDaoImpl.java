@@ -5,14 +5,14 @@ import com.aug.entities.bill.Bill;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public class BillDaoImpl extends BaseHibernateDaoImpl<Bill> implements BillDao{
+public class BillDaoImpl extends BaseHibernateDaoImpl<Bill> implements BillDao {
 
-    protected BillDaoImpl() {
-        super(Bill.class);
-    }
+	protected BillDaoImpl() {
+		super(Bill.class);
+	}
 
-    @Override
-    public boolean deleteById(int id) {
-        return false;
-    }
+	@Override
+	public boolean deleteById(int id) {
+		return false;
+	}
 }
