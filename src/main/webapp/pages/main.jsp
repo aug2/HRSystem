@@ -9,8 +9,8 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <title>Main</title>
-    <link rel="stylesheet" href="../css/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../css/custom.css">
+    <link rel="stylesheet" href="css/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/custom.css">
 </head>
 <body>
 <div class="navbar navbar-fixed-top">
@@ -23,8 +23,8 @@
                     <span class="sr-only">Toggle Dropdown</span>
                 </button>
                 <ul class="dropdown-menu">
-                    <li><a href="#">List All</a></li>
-                    <li><a href="#">Add</a></li>
+                    <li><a href="armList.action">List All</a></li>
+                    <li><a href="armInitAdd.action">Add</a></li>
                 </ul>
             </div>
             <div class="btn-group">
@@ -89,8 +89,8 @@
                     <span class="sr-only">Toggle Dropdown</span>
                 </button>
                 <ul class="dropdown-menu">
-                    <li><a href="#">List All</a></li>
-                    <li><a href="#">Add</a></li>
+                    <li><a href="ListAll">List All</a></li>
+                    <li><a href="initAddMay">Add</a></li>
                 </ul>
             </div>
             <div class="btn-group">
@@ -107,7 +107,7 @@
         </div>
     </div>
 </div>
-<script src="../js/jquery-1.11.1.min.js"></script>
-<script src="../css/bootstrap/js/bootstrap.min.js"></script>
+<script src="js/jquery-1.11.1.min.js"></script>
+<script src="css/bootstrap/js/bootstrap.min.js"></script>
 </body>
 </html>
