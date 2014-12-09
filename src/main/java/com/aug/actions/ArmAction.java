@@ -1,7 +1,5 @@
-package com.aug.actions.arm;
+package com.aug.actions;
 
-
-import com.aug.actions.BaseAction;
 import com.aug.entities.arm.Arm;
 import com.aug.services.arm.ArmService;
 import com.opensymphony.xwork2.ActionSupport;
@@ -26,7 +24,7 @@ public class ArmAction extends ActionSupport implements BaseAction{
     }
 
     @Override
-    @Action(value = "initList", results = {
+    @Action(value = "armInitList", results = {
             @Result(name = "input", location = "pages/arm/list.jsp")})
     public String initList() {
         return INPUT;
