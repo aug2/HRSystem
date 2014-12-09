@@ -43,8 +43,12 @@
                 <s:textfield cssClass="form-control" placeholder="Email" name="model.email" id="email"/>
                 <s:textfield cssClass="form-control" placeholder="Age" name="model.age" id="age"/>
                 <s:textfield cssClass="form-control" placeholder="Owner" name="model.arm" id="owner"/>
-                <button class="btn btn-md btn-primary" onclick="add()">Add</button>
-                <button class="btn btn-md btn-primary" onclick="update()">Update</button>
+                <s:if test="%{id == null}">
+                    <button class="btn btn-md btn-primary" onclick="add()">Add</button>
+                </s:if>
+                <s:if test="%{id != null}">
+                    <button class="btn btn-md btn-primary" onclick="update()">Update</button>
+                </s:if>
                 <button class="btn btn-md btn-primary" onclick="clear()">Clear</button>
             </form>
         </div>
