@@ -23,8 +23,8 @@
                     <span class="sr-only">Toggle Dropdown</span>
                 </button>
                 <ul class="dropdown-menu">
-                    <li><a href="#">List All</a></li>
-                    <li><a href="#">Add</a></li>
+                    <li><a href="armList.action">List All</a></li>
+                    <li><a href="armInitAdd.action">Add</a></li>
                 </ul>
             </div>
             <div class="btn-group">
@@ -45,8 +45,8 @@
                     <span class="sr-only">Toggle Dropdown</span>
                 </button>
                 <ul class="dropdown-menu">
-                    <li><a href="#">List All</a></li>
-                    <li><a href="#">Add</a></li>
+                    <li><a href="initList">List All</a></li>
+                    <li><a href="initCreate">Add</a></li>
                 </ul>
             </div>
             <div class="btn-group">
@@ -89,8 +89,8 @@
                     <span class="sr-only">Toggle Dropdown</span>
                 </button>
                 <ul class="dropdown-menu">
-                    <li><a href="#">List All</a></li>
-                    <li><a href="#">Add</a></li>
+                    <li><a href="ListAll">List All</a></li>
+                    <li><a href="initAddMay">Add</a></li>
                 </ul>
             </div>
             <div class="btn-group">
@@ -100,8 +100,8 @@
                     <span class="sr-only">Toggle Dropdown</span>
                 </button>
                 <ul class="dropdown-menu">
-                    <li><a href="#">List All</a></li>
-                    <li><a href="#">Add</a></li>
+                    <li><a href="listalljub">List All</a></li>
+                    <li><a href="initCreate">Add</a></li>
                 </ul>
             </div>
         </div>

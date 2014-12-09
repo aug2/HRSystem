@@ -12,7 +12,13 @@ public class MayDaoImpl extends BaseHibernateDaoImpl<May> implements MayDao{
     }
 
     @Override
-    public boolean deleteById(int id) {
-        return false;
+    public boolean deleteMayById(int Mayid) {
+    	May may = getById(Mayid);
+		if (may == null) {
+			return false;
+		}
+		getCurrentSession().delete(may);
+
+		return true;
     }
 }
