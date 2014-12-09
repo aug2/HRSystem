@@ -26,7 +26,7 @@
                     <li><a href="armList.action">List All</a></li>
                     <li><a href="armInitAdd.action">Add</a></li>
                 </ul>
-            </div>
+            </div> 
             <div class="btn-group">
                 <button type="button" class="btn btn-primary">Va</button>
                 <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
@@ -34,9 +34,9 @@
                     <span class="sr-only">Toggle Dropdown</span>
                 </button>
                 <ul class="dropdown-menu">
-                    <li><a href="#">List All</a></li>
-                    <li><a href="#">Add</a></li>
-                </ul>
+                    <li><a href="showlist">List All</a></li>
+                    <li><a href="initcreate">Add</a></li>
+                </ul> 
             </div>
             <div class="btn-group">
                 <button type="button" class="btn btn-primary">Parn</button>
