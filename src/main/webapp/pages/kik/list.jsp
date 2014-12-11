@@ -9,7 +9,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="">
 <meta name="author" content="">
-<title>ListAllMay</title>
+<title>ListAllkik</title>
 <link rel="stylesheet" href="css/bootstrap/css/bootstrap.min.css">
 <link rel="stylesheet" href="css/custom.css">
 </head>
@@ -26,8 +26,8 @@
 					<s:iterator value="kiks">
 						<s:property value="name" />
 						<s:property value="email" />
-						<a href="initUpdateMay?id=<s:property value="id" />">Edit</a>
-						<a href="deleteMay?id=<s:property value="id" />">Delete</a>
+						<a href="initUpdateKik?id=<s:property value="id" />">Edit</a>
+						<a href="deleteKik?id=<s:property value="id" />">Delete</a>
 						<br>
 					</s:iterator>
 				</form>

@@ -8,12 +8,12 @@
 <title>Insert title here</title>
 <script type="text/javascript">
 	function ok() {
-		var jubname = document.getElementById("kikname");
-		var jubage = document.getElementById("kikage");
+		var kikname = document.getElementById("kikname");
+		var kikage = document.getElementById("kikage");
 
-		if (jubname.value === "") {
+		if (kikname.value === "") {
 			alert("Plese fill-in kikname");
-			jubname.focus();
+			kikname.focus();
 			return false;
 		} else {
 			document.forms[0].submit();
