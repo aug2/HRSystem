@@ -45,8 +45,8 @@
                     <span class="sr-only">Toggle Dropdown</span>
                 </button>
                 <ul class="dropdown-menu">
-                    <li><a href="initList">List All</a></li>
-                    <li><a href="initCreate">Add</a></li>
+                    <li><a href="initParnList">List All</a></li>
+                    <li><a href="initParnCreate">Add</a></li>
                 </ul>
             </div>
             <div class="btn-group">
