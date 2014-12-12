@@ -17,7 +17,11 @@ public class ParnAction implements BaseAction{
 	@Autowired
     private ParnService parnService;
     private Parn parn;
+    private Parn temp;
     private List<Parn> parns; 
+    private Integer id;
+    private String search;
+    
 	public ParnService getParnService() {
 		return parnService;
 	}
@@ -34,6 +38,23 @@ public class ParnAction implements BaseAction{
 		this.parn = parn;
 	}
 
+	
+	public String getSearch() {
+		return search;
+	}
+
+	public void setSearch(String search) {
+		this.search = search;
+	}
+
+	public Parn getTemp() {
+		return temp;
+	}
+
+	public void setTemp(Parn temp) {
+		this.temp = temp;
+	}
+
 	public List<Parn> getParns() {
 		return parns;
 	}
@@ -41,7 +62,16 @@ public class ParnAction implements BaseAction{
 	public void setParns(List<Parn> parns) {
 		this.parns = parns;
 	}
-	@Action(value ="initCreate", results={
+	
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
+
+	@Action(value ="initParnCreate", results={
 			@Result(name = "input", location = "pages/parn/register.jsp")
 	} )
 	@Override
@@ -49,7 +79,7 @@ public class ParnAction implements BaseAction{
         return "input";
     }
 	
-	@Action(value ="initList", results={
+	@Action(value ="initParnList", results={
 			@Result(name = "input", location = "pages/parn/list.jsp")
 	} )
     @Override
@@ -58,17 +88,23 @@ public class ParnAction implements BaseAction{
 		return "input";
     }
 
+	@Action(value ="initParnUpdate", results={
+				@Result(name = "success", location = "pages/parn/update.jsp")
+		} )
     @Override
     public String initUpdate() {
-        return null;
+		temp = parnService.findById(id);
+        return "success";
     }
-
+	@Action(value ="initParnDelete", results={
+			@Result(name = "success", location = "pages/parn/list.jsp")
+	} )
     @Override
     public String initDelete() {
-        return null;
+		return "sucess";
     }
-    @Action(value ="create", results={
-			@Result(name = "success", location = "list" ,type ="redirect")
+    @Action(value ="ParnCreate", results={
+			@Result(name = "success", location = "ParnList", type="redirect")
 	} )
     @Override
     public String create() {
@@ -76,7 +112,7 @@ public class ParnAction implements BaseAction{
         return "success";
     }
     
-    @Action(value ="list", results={
+    @Action(value ="ParnList", results={
 			@Result(name = "success", location = "pages/parn/list.jsp")
 	} )
     @Override
@@ -85,13 +121,40 @@ public class ParnAction implements BaseAction{
 		return "success";
     }
 
+    @Action(value ="ParnUpdate", results={
+			@Result(name = "success", location = "ParnList.action" , type="redirect")
+	} )
     @Override
     public String update() {
-        return null;
+		parnService.update(temp);
+        return "success";
     }
-
+    @Action(value ="ParnDelete", results={
+			@Result(name = "success", location = "ParnList.action" , type="redirect")
+	} )
     @Override
     public String delete() {
-        return null;
+    	if(parnService.delete(id))
+    		return "success";
+    	return null;
     }
+
+    @Action(value ="initMain", results={
+			@Result(name = "success", location = "pages/main.jsp")
+	} )
+    public String initMain() {
+    	return "success";
+    }
+    
+    @Action(value ="ParnSearch", results={
+			@Result(name = "success", location = "pages/parn/search.jsp")
+	} )
+    public String search() {
+		if(parnService.search(search) != null) {
+			parns = parnService.search(search);
+			return "success";
+		}
+    	return null;
+    }
+    
 }

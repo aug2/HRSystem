@@ -8,10 +8,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="">
 <meta name="author" content="">
-<title>Register</title>
+<title>Update</title>
 <link rel="stylesheet" href="<s:url value='/css/bootstrap/css/bootstrap.min.css'/>">
 <link rel="stylesheet" href="<s:url value='/css/custom.css'/>">
-
 <script type="text/javascript">
 	function validate() {
 		var name = document.getElementById("name");
@@ -37,22 +36,24 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-xs-12">
-						<form class="form-signin" action="ParnCreate" method="post">
+						<form class="form-signin" action="ParnUpdate" method="post">
+						 <s:hidden name="temp.id" id="id"/>
 							<s:textfield cssClass="form-control" placeholder="Name"
-								name="parn.name" id="name" />
+								name="temp.name" id="name"/>
 							<s:textfield cssClass="form-control" autofocus="" require=""
-								placeholder="Email" name="parn.email" id="email"/>
+								placeholder="Email" name="temp.email" />
 							<s:textfield cssClass="form-control" placeholder="Age"
-								name="parn.age" />
+								name="temp.age" />
 							<div class="row">
 								<div class="col-xs-6">
-									<button class="btn btn-md btn-primary btn-block" onclick="return validate()">OK</button>
+								
+									<button class="btn btn-md btn-primary btn-block" onclick="return validate()">Update</button>
 								</div>
 								<div class="col-xs-6">
 									<button class="btn btn-md btn-primary btn-block" type="reset">Cancel</button>
 								</div>
 							</div>
-							<a href="initMain">Main Menu</a>
+							<a href="initMain">Add new</a>
 							<a href="initParnCreate">Add new</a>
 						</form>
 					</div>

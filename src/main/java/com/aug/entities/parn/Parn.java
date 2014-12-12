@@ -18,12 +18,6 @@ public class Parn extends BaseEntity implements Serializable {
 	@Column(name = "AGE")
 	private String age;
 
-	@Column(name = "YOURNAME")
-	private String yourname;
-	
-	@Column(name = "PARN")
-	private String parn;
-
 	public String getEmail() {
 		return email;
 	}
@@ -39,13 +33,6 @@ public class Parn extends BaseEntity implements Serializable {
 	public void setAge(String age) {
 		this.age = age;
 	}
-
-	public String getParn() {
-		return parn;
-	}
-
-	public void setParn(String parn) {
-		this.parn = parn;
-	}	
+	
 }
 

@@ -9,38 +9,19 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="">
 <meta name="author" content="">
-<title>Show Parn List</title>
+<title>Search Parn List</title>
 <link rel="stylesheet"
 	href="<s:url value='/css/bootstrap/css/bootstrap.min.css'/>">
 <link rel="stylesheet" href="<s:url value='/css/custom.css'/>">
 
-<script type="text/javascript">
-	function validate() {
-		var search = document.getElementById("search");
-		if (search.value === "") {
-			alert("Please fill-in search");
-			return false;
-		} else {
-			document.forms[0].submit(excute(document.getElementById('search').value));
-		}
-	}
-</script>
 </head>
 <body>
 	<div class="navbar navbar-fixed-top">
 		<div class="navbar-inner">
 			<div class="container">
 				<div class="row">
-					<form class="form-signin" action="ParnSearch" method="get">
-						<s:textfield cssClass="form-control" placeholder="Search"
-							name="search" id="search"/>
-						<button class="btn btn-md btn-primary btn-block" onclick="return validate()">
-						Search</button>
-					</form>
-				</div>
-				<div class="row">
 					<div class="col-xs-12">
-						<form class="form-signin" action="ParnList" method="get">
+						<form class="form-signin" action="ParnSearch" method="get">
 							<s:iterator value="parns">
 								<s:property value="id" />
 								<s:property value="email" />
