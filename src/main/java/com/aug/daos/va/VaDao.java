@@ -13,9 +13,8 @@ public interface VaDao extends BaseHibernateDao<Va> {
     
     public void save(Va v);
     
- 
+    public List<Va> search(Va vaobjserach);
     
-
-    
-    
+  
+  
 }

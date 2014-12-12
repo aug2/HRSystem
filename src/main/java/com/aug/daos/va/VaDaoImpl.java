@@ -19,10 +19,6 @@ public class VaDaoImpl extends BaseHibernateDaoImpl<Va> implements VaDao{
         super(Va.class);
     }
 
-    @Override
-    public boolean deleteById(int id) {
-        return false;
-    }
     
   
     
@@ -46,9 +42,38 @@ public class VaDaoImpl extends BaseHibernateDaoImpl<Va> implements VaDao{
             return null;
     }
     
-    @Override
+   @Override
     public void update(final Va va) {
         getCurrentSession().merge(va);
     }
+    
+
+
+	
+	@Override
+	public boolean deleteById(int id) {
+		return false;		
+	}
+	
+	
+
+	
+	public void deleteId(Va vaa) {
+		// TODO Auto-generated method stub
+		
+		getCurrentSession().delete(vaa);
+		
+	}
+	
+	
+	public List<Va> search(Va vaobjserach){
+		Criteria criteria = getCurrentSession().createCriteria(Va.class);
+		criteria.add(Restrictions.eq("name", vaobjserach.getName()));
+		List<Va> vaobj = criteria.list();
+		return vaobj;
+	}
+   
+  
+
 
 }

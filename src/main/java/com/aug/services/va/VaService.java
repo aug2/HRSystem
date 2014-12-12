@@ -1,5 +1,6 @@
 package com.aug.services.va;
 
+import java.sql.SQLException;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,6 +16,7 @@ public class VaService  {
 	   @Autowired
        VaDao vaDao;
 	   public List<Va> valist;
+	
 	   
 	   
 	   public void setVaDao(VaDao vaDao) {
@@ -42,11 +44,28 @@ public class VaService  {
     }
 	
 	
+	public Va getId(int id){
+		return vaDao.getById(id);
+	}
 	
-	public void update(Va v){
-			vaDao.getById(v.getId());
-			vaDao.update(v);
+	
+	public boolean update(Va va){
+			try{
+			vaDao.update(va);
+				return true;
+			}catch(Exception exception){
+				return false;
+			}
 		}
+	
+	
+	public void delete(Va vaa){
+		  vaDao.delete(vaa);
+	}
+	
+	public List<Va> search(Va vaobjsearch){
+		return vaDao.search(vaobjsearch);
+	}
 	
 	
 }

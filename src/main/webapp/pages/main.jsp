@@ -34,7 +34,7 @@
                     <span class="sr-only">Toggle Dropdown</span>
                 </button>
                 <ul class="dropdown-menu">
-                    <li><a href="showlist">List All</a></li>
+                    <li><a href="listemp">List All</a></li>
                     <li><a href="initcreate">Add</a></li>
                 </ul> 
             </div>
