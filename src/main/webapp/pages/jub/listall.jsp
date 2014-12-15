@@ -9,9 +9,29 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="">
 <meta name="author" content="">
-<title>ListAllJub</title>
-<link rel="stylesheet" href="css/bootstrap/css/bootstrap.min.css">
-<link rel="stylesheet" href="css/custom.css">
+
+<link rel="stylesheet"
+	href="<s:url value='/css/bootstrap/css/bootstrap.min.css'/>">
+<link rel="stylesheet" href="<s:url value='/css/custom.css'/>">
+
+<title>ListAlljub</title>
+
+<script type="text/javascript">
+	function Search() {
+		var jubname = document.getElementById("jubname");
+		var jubage = document.getElementById("jubage");
+
+		if (jubname.value === "") {
+			alert("Plese fill-in jubname");
+			jubname.focus();
+			return false;
+		} else {
+			document.forms[0].submit();
+		}
+	}
+</script>
+
+
 </head>
 <body>
 	<div class="navbar navbar-fixed-top">
@@ -22,18 +42,43 @@
 						<s:actionerror />
 					</div>
 				</s:if>
-				<form class="form-signin" action="listalljub1" method="post">
+
+				<br>
+				<div class="col-xs-12">
+					<form class="form-signin" action="Searchjub" method="get">
+						<s:textfield cssClass="form-control" autofocus="" require=""
+							placeholder="Search" name="search" id="search" />
+				</div>
+				</br>
+
+
+				<center>
+					<div class="col-xs-12">
+						<button class="btn btn-info btn-lg"
+							onclick="excute(document.getElementById('search').value)">Search</button>
+					</div>
+					</form>
+				</center>
+				
+
+			
+				<form class="form-signin" action="listalljub" method="post">
 					<s:iterator value="jubs">
+						<br>
 						<s:property value="name" />
+						</br>
 						<s:property value="email" />
 						<a href="initUpdateJub?id=<s:property value="id" />">Edit</a>
 						<a href="deleteJub?id=<s:property value="id" />">Delete</a>
-						<br>
+
 					</s:iterator>
 				</form>
+				
+				
 			</div>
 		</div>
 	</div>
-	<script src="../css/js/bootstrap.min.js"></script>
+
+	<script src="<s:url value='/css/js/bootstrap.min.js'/>"></script>
 </body>
 </html>

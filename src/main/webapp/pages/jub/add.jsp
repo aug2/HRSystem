@@ -8,18 +8,31 @@
 <title>Insert title here</title>
 <script type="text/javascript">
         function ok() {
-            var jubname = document.getElementById("jubname");
-            var jubage = document.getElementById("jubage");
+            var jubname = document.getElementById("name");
+            var jubage = document.getElementById("age");
+            var jubemail = document.getElementById("email")
 
             if (jubname.value === "") {
                 alert("Plese fill-in jubname");
                 jubname.focus();
                 return false;
-            } else {
+            }else if (jubage.value <18) {
+                alert("Plese fill-in age and over");
+                jubemail.focus();
+                return false;
+            }
+            
+            else if (jubage.value <18) {
+                alert("Plese fill-in age and over");
+                jubage.focus();
+                return false;
+            }else {
                 document.forms[0].submit();
             }
         }
     </script>
+    <link rel="stylesheet" href="../css/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/custom.css">
 </head>
 <body>
 <div class="navbar navbar-fixed-top">
@@ -27,15 +40,40 @@
         <div class="container">
             
             <form class="form-signin" action="addjub" method="post">
-            <s:textfield cssClass="form-control" autofocus="" require=""
-						placeholder="Name" name="jub.Name" id="Name" />
-					<s:textfield cssClass="form-control" autofocus="" require=""
-						placeholder="Email" name="jub.EMAIL" id="email" />
-					<s:textfield cssClass="form-control" autofocus="" require=""
-						placeholder="Age" name="jub.AGE" id="age" />
+
+
+					<tr>
+						<br>
+						<label for="prefix" class="col-sm-3 control-label">Name :</label>
+						<s:textfield cssClass="form-control" autofocus="" require=""
+							placeholder="Name" name="jub.Name" id="name" />
+					</tr>
+					</br>
+
+					
+
+					<tr>
+						<br>
+						<label for="prefix" class="col-sm-3 control-label">Email :</label>
+						<s:textfield cssClass="form-control" autofocus="" require=""
+							placeholder="Email" name="jub.email" id="email" />
+					</tr>
+					</br>
+
+
+					<tr>
+						<br>
+						<label for="prefix" class="col-sm-3 control-label">Age :</label>
+						<s:textfield cssClass="form-control" autofocus="" require=""
+							placeholder="Age" name="jub.AGE" id="age" />
+					</tr>
+					</br>
+
+
+
 					<div class="row">
 						<div class="col-xs-6">
-							<button class="btn btn-md btn-primary btn-block" onclick="ok()">OK</button>
+							<button class="btn btn-md btn-primary btn-block" onclick="return ok()">OK</button>
 						</div>
 						<div class="col-xs-6">
 							<button class="btn btn-md btn-primary btn-block" type="reset">Cancel</button>
