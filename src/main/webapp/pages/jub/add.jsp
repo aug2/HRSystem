@@ -8,18 +8,20 @@
 <title>Insert title here</title>
 <script type="text/javascript">
         function ok() {
+
             var jubname = document.getElementById("jubname");
             var jubage = document.getElementById("jubage");
-
             if (jubname.value === "") {
                 alert("Plese fill-in jubname");
                 jubname.focus();
                 return false;
+
             } else {
                 document.forms[0].submit();
             }
         }
     </script>
+
 </head>
 <body>
 <div class="navbar navbar-fixed-top">
@@ -27,6 +29,7 @@
         <div class="container">
             
             <form class="form-signin" action="addjub" method="post">
+
             <s:textfield cssClass="form-control" autofocus="" require=""
 						placeholder="Name" name="jub.Name" id="Name" />
 					<s:textfield cssClass="form-control" autofocus="" require=""
@@ -36,6 +39,7 @@
 					<div class="row">
 						<div class="col-xs-6">
 							<button class="btn btn-md btn-primary btn-block" onclick="ok()">OK</button>
+
 						</div>
 						<div class="col-xs-6">
 							<button class="btn btn-md btn-primary btn-block" type="reset">Cancel</button>

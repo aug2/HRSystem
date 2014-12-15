@@ -12,6 +12,7 @@
 
 <link rel="stylesheet"
 	href="<s:url value='../css/bootstrap/css/bootstrap.min.css'/>">
+
 <link rel="stylesheet" href="<s:url value='../css/custom.css'/>">
 
 <title>ListAlljub</title>
@@ -74,6 +75,8 @@
 		</div>
 	</div>
 
+
 	<script src="<s:url value='../css/js/bootstrap.min.js'/>"></script>
+
 </body>
 </html>

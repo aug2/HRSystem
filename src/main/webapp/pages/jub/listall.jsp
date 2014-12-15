@@ -9,9 +9,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="">
 <meta name="author" content="">
+
 <title>ListAllJub</title>
 <link rel="stylesheet" href="css/bootstrap/css/bootstrap.min.css">
 <link rel="stylesheet" href="css/custom.css">
+
 </head>
 <body>
 	<div class="navbar navbar-fixed-top">
@@ -22,6 +24,7 @@
 						<s:actionerror />
 					</div>
 				</s:if>
+<<<<<<< HEAD
 				<form class="form-signin" action="listalljub1" method="post">
 					<s:iterator value="jubs">
 						<s:property value="name" />
@@ -35,5 +38,6 @@
 		</div>
 	</div>
 	<script src="../css/js/bootstrap.min.js"></script>
+
 </body>
 </html>

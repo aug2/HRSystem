@@ -33,7 +33,6 @@
 </script>
 
 
-
 </head>
 <body>
 	<div class="navbar navbar-fixed-top">
@@ -70,6 +69,7 @@
 						<br>
 						<s:property value="name" />
 						<s:property value="email" />
+
 
 						</br>
 						<a href="InitUpdateKik?id=<s:property value="id" />">Edit</a>
