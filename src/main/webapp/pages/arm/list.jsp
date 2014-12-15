@@ -15,7 +15,7 @@
 <body>
 <div class="navbar navbar-fixed-top">
     <div class="navbar-inner">
-        <s:iterator value=""
+        <s:iterator value=""></s:iterator>
     </div>
 </div>
 <script src="../js/jquery-1.11.1.min.js"></script>
