@@ -124,7 +124,7 @@ public class BillAction extends ActionSupport implements BaseAction {
 	}
 
 	
-	@Action(value = "ListAll", results = { @Result(name = "success", location = "pages/listall.jsp") })
+	@Action(value = "ListAllBill", results = { @Result(name = "success", location = "pages/listall.jsp") })
 	public String list() {
 
 		bills = billService.findAllBill();
@@ -132,7 +132,7 @@ public class BillAction extends ActionSupport implements BaseAction {
 		return SUCCESS;
 	}
 
-	@Action(value = "updatebill", results = { @Result(name = "success", location = "ListAll", type = "redirect") })
+	@Action(value = "updatebill", results = { @Result(name = "success", location = "ListAllBill", type = "redirect") })
 	public String update() {
 		
 		billService.update(billK);

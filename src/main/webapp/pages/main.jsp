@@ -68,7 +68,7 @@
                     <span class="sr-only">Toggle Dropdown</span>
                 </button>
                 <ul class="dropdown-menu">
-                    <li><a href="#">List All</a></li>
+                    <li><a href="ListAllBill">List All</a></li>
                     <li><a href="add.jsp">Add</a></li>
                 </ul>
             </div>
