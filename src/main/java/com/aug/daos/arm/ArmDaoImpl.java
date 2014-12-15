@@ -7,7 +7,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 @Repository
 @Transactional
-public class ArmDaoImpl extends BaseHibernateDaoImpl<Arm> implements ArmDao{
+public class ArmDaoImpl extends BaseHibernateDaoImpl<Arm> implements ArmDao {
 
     protected ArmDaoImpl() {
         super(Arm.class);
@@ -15,6 +15,12 @@ public class ArmDaoImpl extends BaseHibernateDaoImpl<Arm> implements ArmDao{
 
     @Override
     public boolean deleteById(int id) {
-        return false;
+        Arm entry = getById(id);
+        if (entry == null) {
+            return false;
+        }
+
+        delete(entry);
+        return true;
     }
 }

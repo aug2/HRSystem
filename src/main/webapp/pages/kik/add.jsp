@@ -10,7 +10,6 @@
 	href="<s:url value='/css/bootstrap/css/bootstrap.min.css'/>">
 <link rel="stylesheet" href="<s:url value='/css/custom.css'/>">
 <title>Insert title here</title>
-
 <script type="text/javascript">
 	function validateadd() {
 		var name = document.getElementById("name");
