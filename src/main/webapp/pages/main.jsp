@@ -8,9 +8,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
+
     <title>Main</title>
-    <link rel="stylesheet" href="css/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/custom.css">
+    <link rel="stylesheet" href="../css/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/custom.css">
+
+    <!-- <title>Department</title>
+    <link rel="stylesheet" href="../css/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/custom.css"> -->
+
 </head>
 <body>
 <div class="navbar navbar-fixed-top">
@@ -27,7 +33,9 @@
                     <li><a href="armInitAdd.action">Add</a></li>
                 </ul>
             </div> 
+            
             <div class="btn-group">
+
                 <button type="button" class="btn btn-primary">Va</button>
                 <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
                     <span class="caret"></span>
@@ -37,6 +45,8 @@
                     <li><a href="listemp">List All</a></li>
                     <li><a href="initcreate">Add</a></li>
                 </ul> 
+
+
             </div>
             <div class="btn-group">
                 <button type="button" class="btn btn-primary">Parn</button>
@@ -107,7 +117,11 @@
         </div>
     </div>
 </div>
+<%-- <<<<<<< HEAD
 <script src="js/jquery-1.11.1.min.js"></script>
 <script src="css/bootstrap/js/bootstrap.min.js"></script>
+======= --%>
+<script src="../js/jquery-1.11.1.min.js"></script>
+<script src="../css/bootstrap/js/bootstrap.min.js"></script>
 </body>
 </html>

@@ -9,8 +9,8 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <title>Arm - List</title>
-    <link rel="stylesheet" href="css/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/custom.css">
+    <link rel="stylesheet" href="../css/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/custom.css">
 </head>
 <body>
 <div class="navbar navbar-fixed-top">
