@@ -1,3 +1,4 @@
+
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib prefix="s" uri="/struts-tags" %>
 <!DOCTYPE html>
@@ -23,8 +24,8 @@
                     <span class="sr-only">Toggle Dropdown</span>
                 </button>
                 <ul class="dropdown-menu">
-                    <li><a href="#">List All</a></li>
-                    <li><a href="#">Add</a></li>
+                    <li><a href="armList.action">List All</a></li>
+                    <li><a href="armInitAdd.action">Add</a></li>
                 </ul>
             </div>
             <div class="btn-group">
@@ -45,8 +46,8 @@
                     <span class="sr-only">Toggle Dropdown</span>
                 </button>
                 <ul class="dropdown-menu">
-                    <li><a href="#">List All</a></li>
-                    <li><a href="#">Add</a></li>
+                    <li><a href="initParnList">List All</a></li>
+                    <li><a href="initParnCreate">Add</a></li>
                 </ul>
             </div>
             <div class="btn-group">
@@ -78,7 +79,7 @@
                     <span class="sr-only">Toggle Dropdown</span>
                 </button>
                 <ul class="dropdown-menu">
-                    <li><a href="ListAll">ListAll</a></li>
+                    <li><a href="ListAllKik">ListAll</a></li>
                     <li><a href="InitAddKik">Add</a></li>
                 </ul>
             </div>
@@ -89,8 +90,8 @@
                     <span class="sr-only">Toggle Dropdown</span>
                 </button>
                 <ul class="dropdown-menu">
-                    <li><a href="#">List All</a></li>
-                    <li><a href="#">Add</a></li>
+                    <li><a href="ListAll">List All</a></li>
+                    <li><a href="initAddMay">Add</a></li>
                 </ul>
             </div>
             <div class="btn-group">
@@ -100,8 +101,8 @@
                     <span class="sr-only">Toggle Dropdown</span>
                 </button>
                 <ul class="dropdown-menu">
-                    <li><a href="#">List All</a></li>
-                    <li><a href="#">Add</a></li>
+                    <li><a href="listalljub">List All</a></li>
+                    <li><a href="initCreate">Add</a></li>
                 </ul>
             </div>
         </div>
@@ -109,5 +110,7 @@
 </div>
 <script src="../js/jquery-1.11.1.min.js"></script>
 <script src="../css/bootstrap/js/bootstrap.min.js"></script>
+
+
 </body>
 </html>
