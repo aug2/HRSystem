@@ -10,7 +10,6 @@
 <meta name="description" content="">
 <meta name="author" content="">
 
-
 <link rel="stylesheet"
 	href="<s:url value='/css/bootstrap/css/bootstrap.min.css'/>">
 <link rel="stylesheet" href="<s:url value='/css/custom.css'/>">
@@ -31,7 +30,6 @@
 		}
 	}
 </script>
-
 
 
 </head>
@@ -70,11 +68,9 @@
 						<br>
 						<s:property value="name" />
 						<s:property value="email" />
-
 						</br>
 						<a href="InitUpdateKik?id=<s:property value="id" />">Edit</a>
 						<a href="DeleteKik?id=<s:property value="id" />">Delete</a>
-
 
 					</s:iterator>
 				</form>

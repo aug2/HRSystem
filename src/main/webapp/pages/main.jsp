@@ -10,8 +10,8 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <title>Main</title>
-    <link rel="stylesheet" href="css/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/custom.css">
+    <link rel="stylesheet" href="../css/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/custom.css">
 </head>
 <body>
 <div class="navbar navbar-fixed-top">
@@ -27,7 +27,7 @@
                     <li><a href="armList.action">List All</a></li>
                     <li><a href="armInitAdd.action">Add</a></li>
                 </ul>
-            </div> 
+            </div>
             <div class="btn-group">
                 <button type="button" class="btn btn-primary">Va</button>
                 <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
@@ -35,9 +35,9 @@
                     <span class="sr-only">Toggle Dropdown</span>
                 </button>
                 <ul class="dropdown-menu">
-                    <li><a href="listemp">List All</a></li>
-                    <li><a href="initcreate">Add</a></li>
-                </ul> 
+                    <li><a href="#">List All</a></li>
+                    <li><a href="#">Add</a></li>
+                </ul>
             </div>
             <div class="btn-group">
                 <button type="button" class="btn btn-primary">Parn</button>
@@ -108,8 +108,9 @@
         </div>
     </div>
 </div>
-
 <script src="../js/jquery-1.11.1.min.js"></script>
 <script src="../css/bootstrap/js/bootstrap.min.js"></script>
+
+
 </body>
 </html>
