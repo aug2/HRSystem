@@ -20,7 +20,22 @@ public class JubAction extends ActionSupport implements BaseAction{
 	private Jub jub;
 	private List<Jub> jubs;
     public int id;
+    private  Jub temp;
+    private String search;
 	
+
+	
+
+	
+
+	public Jub getTemp() {
+		return temp;
+	}
+
+	public void setTemp(Jub temp) {
+		this.temp = temp;
+	}
+
 	public JubService getJubService() {
 		return JubService;
 	}
@@ -52,50 +67,85 @@ public class JubAction extends ActionSupport implements BaseAction{
 	public void setId(int id) {
 		this.id = id;
 	}
+	
+	public String getSearch() {
+		return search;
+	}
 
-	@Action(value = "initCreate", results = {@Result(name = "input", location = "pages/add.jsp")})
+	public void setSearch(String search) {
+		this.search = search;
+	}
+
+	@Action(value = "initCreate", results = {@Result(name = "input", location = "pages/jub/add.jsp")})
 	 public String initCreate() {
 		 return INPUT;
     }
 
-	 
+	 @Override
     public String initList() {
 		 return null;
     }
-
-    @Override
+    
+	// @Action(value = "initSearch", results = {@Result(name = "success", location = "pages/find.jsp")})
+    public String initSearch() {
+    	return null;
+		   //return "success";
+	    }
+    @Action(value = "initUpdateJub", results = {@Result(name = "input", location = "pages/jub/update.jsp")})
     public String initUpdate() {
-        return null;
+    	temp=JubService.findById(id);
+    	
+    	return INPUT;
     }
 
-    @Override
+   // @Action(value = "deleteJub", results = {@Result(name = "input", location = "pages/delete.jsp")})
     public String initDelete() {
-    
-        return null;
+    	return null;
+       // return INPUT;
     }
 
     
-    @Action(value = "addjub", results = {@Result(name = "susccess", location = "listalljub" ,type="redirect")})
+    @Action(value = "addjub", results = {@Result(name = "success", location = "listalljub" ,type="redirect")})
     public String create() {
     	JubService.save(jub);
-    	return "susccess";
+    	return "success";
     }
 
-    @Action(value = "listalljub", results = {@Result(name = "success", location = "pages/listall.jsp")})
+    @Action(value = "listalljub", results = {@Result(name = "success", location = "pages/jub/listall.jsp")})
     public String list() {
     	jubs=JubService.listall();
         return "success";
     }
 
-    @Override
-    public String update() {
-    	
-    	return null;
+   @Action(value = "updatejub", results = {@Result(name = "success",location = "listalljub" ,type="redirect")})
+        public String update() {
+    	JubService.update(temp);
+    	return "success";
     }
 
-    @Override
+   @Action(value = "deleteJub", results = {@Result(name = "success",location = "listalljub" ,type="redirect"),
+		   @Result(name = "input",location = "listalljub" ,type="redirect")})
     public String delete() {
-        return null;
+	   if(JubService.deleteById(id))
+	   {
+    	
+        return "success";
+        }
+	   return INPUT;
     }
+   
+   
+   
+   @Action(value = "Searchjub", results = { @Result(name = "success", location = "pages/jub/find.jsp") })	
+	public String search() {	
+		if (JubService.search(search) != null){
+			jubs = JubService.search(search);
+			return "success";
+		}
+
+		return null;
+	}
+   
+   
     
 }

@@ -9,8 +9,8 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <title>Main</title>
-    <link rel="stylesheet" href="css/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/custom.css">
+    <link rel="stylesheet" href="../css/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/custom.css">
 </head>
 <body>
 <div class="navbar navbar-fixed-top">
@@ -107,7 +107,7 @@
         </div>
     </div>
 </div>
-<script src="js/jquery-1.11.1.min.js"></script>
-<script src="css/bootstrap/js/bootstrap.min.js"></script>
+<script src="../js/jquery-1.11.1.min.js"></script>
+<script src="../css/bootstrap/js/bootstrap.min.js"></script>
 </body>
 </html>

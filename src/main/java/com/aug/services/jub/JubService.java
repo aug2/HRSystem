@@ -2,6 +2,8 @@ package com.aug.services.jub;
 
 import java.util.List;
 
+
+
 import com.aug.daos.jub.JubDao;
 import com.aug.entities.jub.Jub;
 
@@ -13,7 +15,8 @@ public class JubService {
 
     @Autowired
     private JubDao jubDao;
-
+    
+    
 	public JubDao getJubDao() {
 		return jubDao;
 	}
@@ -38,6 +41,33 @@ public class JubService {
 	public List<Jub>listall(){
 		return jubDao.findAll();
 	}
+
+	
+	public Jub findById(int id) {
+		return jubDao.getById(id);
+		
+	}
+
+	public Boolean deleteById(int id) {
+		return jubDao.deleteById(id);
+		
+	}
+
+	public List<Jub> search(String search) {
+		
+		return jubDao.search(search);
+	}
+
+	
+	
+	/*public List<Jub> search(Jub jub) {
+		
+		return jubDao.searchname(jub);
+	}
+*/
+	
+
+	
 
 	
 	

@@ -34,6 +34,6 @@
 			</div>
 		</div>
 	</div>
-	<script src="css/js/bootstrap.min.js"></script>
+	<script src="../css/js/bootstrap.min.js"></script>
 </body>
 </html>
