@@ -12,10 +12,11 @@ import java.io.Serializable;
 @Table(name = "BILL")
 public class Bill extends BaseEntity implements Serializable {
 	
-	@Column(name = "EMAIL", nullable = false, unique = true)
+	@Column(name = "EMAIL")
 	private String email;
-	@Column(name = "AGE", nullable = false, unique = true)
+	@Column(name = "AGE",unique = false)
 	private Integer  age;
+	
 	
 	public String getEmail() {
 		return email;
@@ -31,4 +32,6 @@ public class Bill extends BaseEntity implements Serializable {
 	}
 	
 	
+	
+
 }

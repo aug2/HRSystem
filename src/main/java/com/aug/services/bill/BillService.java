@@ -34,13 +34,24 @@ public class BillService {
     	billDao.delete(bill);
     }
     
-    public List<Bill>findAllBill(){
+    public List<Bill> findAllBill(){
 		return billDao.findAll();
 	}
 	
-	public boolean deleteBillById(int billId) {
-        return billDao.deleteBillById(billId);
+	public boolean deleteBillById(int id) {
+        return billDao.deleteById(id);
     }
+
+
+	public Bill findByID(Integer id) {
+		
+		return billDao.getById(id);
+	}
+    
+	public List<Bill> search(String search) {
+		
+		return billDao.search(search);
+	}
     
 	
 }
