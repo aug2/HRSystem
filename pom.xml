@@ -42,6 +42,7 @@
 		</dependencies>
 	</dependencyManagement>
 
+
 	<dependencies>
 		<!-- Struts 2 -->
 		<dependency>
@@ -63,6 +64,7 @@
 			<groupId>org.apache.struts</groupId>
 			<artifactId>struts2-spring-plugin</artifactId>
 			<version>${struts2.version}</version>
+
 		</dependency>
 
 		<!-- Spring -->
