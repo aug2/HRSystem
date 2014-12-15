@@ -10,7 +10,6 @@
 <meta name="description" content="">
 <meta name="author" content="">
 
-
 <link rel="stylesheet"
 	href="<s:url value='/css/bootstrap/css/bootstrap.min.css'/>">
 <link rel="stylesheet" href="<s:url value='/css/custom.css'/>">
@@ -22,8 +21,8 @@
 		var kikname = document.getElementById("kikname");
 		var kikage = document.getElementById("kikage");
 
-		if (kikname.value === "") {
-			alert("Plese fill-in kikname");
+		if (kikname.age <= 18) {
+			alert("Plese fill-in ");
 			kikname.focus();
 			return false;
 		} else {
@@ -31,7 +30,6 @@
 		}
 	}
 </script>
-
 
 
 </head>
@@ -44,41 +42,15 @@
 						<s:actionerror />
 					</div>
 				</s:if>
-
-				<br>
-				<div class="col-xs-12">
-					<form class="form-signin" action="SearchKik" method="get">
-						<s:textfield cssClass="form-control" autofocus="" require=""
-							placeholder="Search" name="search" id="search" />
-				</div>
-				</br>
-
-				<br>
-				<center>
-					<div class="col-xs-12">
-						<button class="btn btn-info btn-lg"
-							onclick="excute(document.getElementById('search').value)">Search</button>
-					</div>
-					</form>
-				</center> 
-				</br>
-
-
-						
-				<form class="form-signin" action="ListAllKik" method="post"> 
+				<form class="form-signin" action="SearchKik" method="get">
 					<s:iterator value="kiks">
-						<br>
 						<s:property value="name" />
 						<s:property value="email" />
-
-						</br>
 						<a href="InitUpdateKik?id=<s:property value="id" />">Edit</a>
 						<a href="DeleteKik?id=<s:property value="id" />">Delete</a>
 
-
 					</s:iterator>
 				</form>
-				
 			</div>
 		</div>
 	</div>

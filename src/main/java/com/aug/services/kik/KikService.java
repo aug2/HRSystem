@@ -32,8 +32,8 @@ public class KikService {
         kikDao.update(kik);
     }
 	
-	public void delete(Kik kik) {
-        kikDao.delete(kik);
+	public boolean delete(int id) {
+       return kikDao.deleteById(id);
     }
 	
 	public List<Kik>findAllKik(){
@@ -43,8 +43,15 @@ public class KikService {
 	public boolean deleteKikById(int kikId) {
         return kikDao.deleteById(kikId);
     }
+
+	public Kik findById(int id) {
+		return kikDao.getById(id);
+		
+	}
     
-    
+    public  List<Kik> search(String search){
+    	return kikDao.search(search);
+    }
 
     
     
