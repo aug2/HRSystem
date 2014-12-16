@@ -45,7 +45,8 @@
 				   <s:textfield
 	                        label="Name"
 	                        name="vaobj.name"
-	                        id="name" />
+	                        id="name" 
+	                        tooltip="Enter your Name for update here"/>
    
 			       <s:textfield
 		                        label="Age"
@@ -56,7 +57,8 @@
 		           <s:textfield
 		                        label="E-mail"
 		                        name="vaobj.email"
-		                        id="email" />
+		                        id="email" 
+		                        tooltip="Enter your Email for update here"/>
 		                        
 		        
 		           <s:textfield
@@ -65,9 +67,10 @@
 		                        id="va" />
 		                        
 		            <s:textfield
-		                        label="Owner"
+		                        label="department"
 		                        name="vaobj.department.name"
-		                        id="va" />
+		                        id="va" 
+		                        tooltip="Enter your Department for update here"/>
 		                       
 								
 		      	 
