@@ -64,7 +64,8 @@
 		           <s:textfield
 		                        label="Owner"
 		                        name="vaobj.va"
-		                        id="va" />
+		                        id="va"
+		                        tooltip="Enter your Owner for update here"/> />
 		                        
 		            <s:textfield
 		                        label="department"
