@@ -63,6 +63,11 @@
 		                        label="Owner"
 		                        name="vaobj.va"
 		                        id="va" />
+		                        
+		            <s:textfield
+		                        label="Owner"
+		                        name="vaobj.department.name"
+		                        id="va" />
 		                       
 								
 		      	 

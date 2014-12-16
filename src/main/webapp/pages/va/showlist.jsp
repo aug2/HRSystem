@@ -20,7 +20,7 @@
 	
 	
   	<s:if test="%{employees.size() <= 0}">
-                Data Not Found
+               <font color="red">Data Not Found</font>
     </s:if>
   	
   		<br>
@@ -37,7 +37,8 @@
 		
 		
 		<br>
-  		<a href="initcreate">Add New</a>
+  		<a href="initcreate">Add New Employee</a> |
+  		<a href="listdept">Department</a>
 	
 	 	<s:form action="listemp" method="get" theme="bootstrap" cssClass="well form-horizontal">
 		
@@ -48,6 +49,7 @@
 	       	   			      	<div class="col-xs-1"><s:label>age</s:label></div>
 	       	   			      	<div class="col-xs-2"><s:label>email</s:label></div>
 	       	   			      	<div class="col-xs-1"><s:label>owner</s:label></div>
+	       	   			      	<div class="col-xs-1"><s:label>department</s:label></div>
 	       	   			   
 	       	   			   </div>
  		  <s:iterator value="employees" status="employeesStatus">
@@ -58,6 +60,7 @@
 								<div class="col-xs-1"><s:property value="age"/></div>				    	
 							  	<div class="col-xs-2"><s:property value="email"/></div>	  
 								<div class="col-xs-1"><s:property value="va"/></div>
+								<div class="col-xs-1"><s:property value="department"/></div>
 								
 								<%-- <s:bean name="com.aug.entities.va.TestBeen" var="hello" >
   								<s:param name="id"><s:property value="id"/></s:param>
@@ -73,8 +76,6 @@
 	
 			</div>
 	
-		
-		
     </s:form>
 
 

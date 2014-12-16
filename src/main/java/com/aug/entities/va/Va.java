@@ -4,6 +4,8 @@ import com.aug.entities.BaseEntity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import java.io.Serializable;
@@ -18,6 +20,21 @@ public class Va extends BaseEntity implements Serializable {
 	private Integer age;
 	@Column(name="VA")
 	private String va;
+	
+	@ManyToOne
+	@JoinColumn(name = "DEPARTMENT")
+	private Department department;
+	
+	
+	
+	public Department getDepartment() {
+		return department;
+	}
+	public void setDepartment(Department department) {
+		this.department = department;
+	}
+	
+	
 	public String getEmail() {
 		return email;
 	}

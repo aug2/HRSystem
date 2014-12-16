@@ -10,8 +10,10 @@ import javax.servlet.http.HttpServletRequest;
 import com.aug.actions.BaseAction;
 
 
+import com.aug.entities.va.Department;
 import com.aug.entities.va.TestBeen;
 import com.aug.entities.va.Va;
+import com.aug.services.va.DepartmentService;
 import com.aug.services.va.VaService;
 import com.opensymphony.xwork2.ActionSupport;
 
@@ -34,6 +36,50 @@ public class VaAction extends ActionSupport implements BaseAction{
 	//public Map session ;
 	@Autowired
 	VaService vaservice;
+	@Autowired
+	DepartmentService deService;
+	Department department;
+	List<Department> departmentlist;
+	String iddept;
+	int dept;
+	
+	
+
+
+	public String getIddept() {
+		return iddept;
+	}
+
+
+	public void setIddept(String iddept) {
+		this.iddept = iddept;
+	}
+
+
+	public Department getDepartment() {
+		return department;
+	}
+
+
+	public void setDepartment(Department department) {
+		this.department = department;
+	}
+
+
+	public List<Department> getDepartmentlist() {
+		return departmentlist;
+	}
+
+
+	public void setDepartmentlist(List<Department> departmentlist) {
+		this.departmentlist = departmentlist;
+	}
+
+
+	
+	
+	
+	
 	
 	public Integer id;
 	
@@ -125,6 +171,10 @@ public class VaAction extends ActionSupport implements BaseAction{
 			@Result(name = "input", location = "pages/va/createemp.jsp")})
 	@Override
     public String initCreate() {
+		departmentlist = deService.findAllDe();
+		for(Department id:departmentlist){
+			System.out.println(id);
+		}
         return INPUT;
     }
     
@@ -171,6 +221,16 @@ public class VaAction extends ActionSupport implements BaseAction{
     @Override
     public String create() {
     	
+    	System.out.println("id: "+iddept);
+    	
+    	List<Department> listdept = deService.findIdDept(iddept);
+    	for(Department dep:listdept){
+    		vaobj.setDepartment(dep);
+    	}
+    
+    	
+    	 
+    	  System.out.println("objdept#2: "+vaobj.getDepartment().getId());
     	if(vaobj.getAge()<18){
     		addActionError("your age is less than 18");
     		return "failuer";
@@ -206,6 +266,15 @@ public class VaAction extends ActionSupport implements BaseAction{
     	va1.setAge(this.vaobj.getAge());
     	va1.setEmail(this.vaobj.getEmail());
     	va1.setVa(this.vaobj.getVa());
+    	
+    	List<Department> listdept = deService.findIdDept(this.vaobj.getDepartment().getName());
+    	for(Department dept:listdept){
+    		va1.setDepartment(dept);
+    	}
+    	
+    	
+    	
+
     	if(vaservice.update(va1)==false||va1.getAge()<18){
     		if(vaservice.update(va1)==false){
     		  addActionError("name is dupicate");	
@@ -258,5 +327,7 @@ public class VaAction extends ActionSupport implements BaseAction{
     
        
     }
+    
+   
 
 }

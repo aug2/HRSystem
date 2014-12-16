@@ -66,6 +66,14 @@
 	                        tooltip="Enter your Owner here"
 	                        cssClass="form-control"/>
 	                        
+	           
+	           <s:select label="What's your department" 
+				headerKey="-1" headerValue="Select Department"
+				list="departmentlist" 
+				name="iddept" />
+				
+				
+	                        
 	       
 		        <div align="center"> 
 			        <s:submit cssClass="btn" onclick="validate()"/> 
